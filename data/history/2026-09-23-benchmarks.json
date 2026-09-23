@@ -1,0 +1,139 @@
+{
+  "_doc": "Benchmark-Registry. 'results' wird vom Radar gepflegt: je Modell-ID ein Objekt {value, date, source, self_reported, settings}. Kein Wert ohne Quelle. Beim ersten Lauf prüfen, ob jedes Leaderboard noch gepflegt wird; tote Benchmarks auf status='deprecated' setzen und im Newsletter Ersatz vorschlagen.",
+  "updated": null,
+  "benchmarks": {
+    "tau2_bench": {
+      "name": "τ²-bench",
+      "category": "core",
+      "status": "active",
+      "measures": "Agent löst Kundenservice-Aufgaben mit Tools und Policy-Regeln über mehrere Turns (Domänen: Retail, Airline, Telecom)",
+      "why_relevant": "Nächstes am n8n-Agent-Alltag: Tool-Calling + Regeltreue + Mehrschritt",
+      "metric": "pass^1 in %",
+      "higher_is_better": true,
+      "leaderboard": "https://github.com/sierra-research/tau2-bench",
+      "independent": true,
+      "results": {}
+    },
+    "bfcl": {
+      "name": "BFCL (Berkeley Function Calling Leaderboard)",
+      "category": "core",
+      "status": "active",
+      "measures": "Korrektheit von Function-/Tool-Calls (einfach, parallel, multi-turn, Relevanzerkennung)",
+      "why_relevant": "Direktes Maß für zuverlässige Tool-Nodes in n8n",
+      "metric": "Overall Accuracy in %",
+      "higher_is_better": true,
+      "leaderboard": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "independent": true,
+      "results": {}
+    },
+    "swe_bench_verified": {
+      "name": "SWE-bench Verified",
+      "category": "core",
+      "status": "active",
+      "measures": "Reale GitHub-Issues lösen (500 geprüfte Aufgaben)",
+      "why_relevant": "Proxy für Code-/Skript-Generierung in Workflows und für agentische Ausdauer",
+      "metric": "% resolved",
+      "higher_is_better": true,
+      "leaderboard": "https://www.swebench.com/",
+      "independent": true,
+      "results": {}
+    },
+    "terminal_bench": {
+      "name": "Terminal-Bench",
+      "category": "core",
+      "status": "active",
+      "measures": "Aufgaben in einer echten Shell-Umgebung Ende-zu-Ende lösen",
+      "why_relevant": "Agentische Ausführung mit Werkzeugen unter realen Fehlerbedingungen",
+      "metric": "Accuracy in %",
+      "higher_is_better": true,
+      "leaderboard": "https://www.tbench.ai/",
+      "independent": true,
+      "results": {}
+    },
+    "aa_intelligence_index": {
+      "name": "Artificial Analysis Intelligence Index",
+      "category": "core",
+      "status": "active",
+      "measures": "Aggregierter Index aus mehreren Evals; dazu Preis je 1M Tokens und Tokens/s",
+      "why_relevant": "Einzige Quelle, die Leistung, Preis und Geschwindigkeit vergleichbar nebeneinander stellt",
+      "metric": "Index (0–100)",
+      "higher_is_better": true,
+      "leaderboard": "https://artificialanalysis.ai/leaderboards/models",
+      "independent": true,
+      "results": {}
+    },
+    "gaia": {
+      "name": "GAIA",
+      "category": "context",
+      "status": "active",
+      "measures": "Assistenten-Aufgaben mit Recherche, Tools und Mehrschritt-Reasoning",
+      "why_relevant": "Recherche-Agenten",
+      "metric": "Accuracy in %",
+      "higher_is_better": true,
+      "leaderboard": "https://huggingface.co/spaces/gaia-benchmark/leaderboard",
+      "independent": true,
+      "results": {}
+    },
+    "browsecomp": {
+      "name": "BrowseComp",
+      "category": "context",
+      "status": "active",
+      "measures": "Schwer auffindbare Fakten im Web recherchieren",
+      "why_relevant": "Web-Recherche-Workflows (Lead-Research, Marktbeobachtung)",
+      "metric": "Accuracy in %",
+      "higher_is_better": true,
+      "leaderboard": "https://openai.com/index/browsecomp/",
+      "independent": false,
+      "results": {}
+    },
+    "osworld": {
+      "name": "OSWorld(-Verified)",
+      "category": "context",
+      "status": "active",
+      "measures": "Computer-Use: reale Desktop-Aufgaben per GUI",
+      "why_relevant": "Relevant, sobald Kunden Legacy-Software ohne API automatisieren wollen",
+      "metric": "Success Rate in %",
+      "higher_is_better": true,
+      "leaderboard": "https://os-world.github.io/",
+      "independent": true,
+      "results": {}
+    },
+    "ifbench": {
+      "name": "IFBench",
+      "category": "context",
+      "status": "active",
+      "measures": "Präzises Befolgen von Output-Constraints (Format, Länge, Verbote)",
+      "why_relevant": "Structured Output und Format-Treue in Automationen",
+      "metric": "Accuracy in %",
+      "higher_is_better": true,
+      "leaderboard": "https://github.com/allenai/IFBench",
+      "independent": true,
+      "results": {}
+    },
+    "lmarena_text": {
+      "name": "LMArena (Text)",
+      "category": "context",
+      "status": "active",
+      "measures": "Menschliche Paarvergleiche, Elo-Score",
+      "why_relevant": "Wahrgenommene Qualität für kundennahe Texte (E-Mails, Antworten)",
+      "metric": "Elo",
+      "higher_is_better": true,
+      "leaderboard": "https://lmarena.ai/leaderboard",
+      "independent": true,
+      "results": {}
+    }
+  },
+  "aggregators": [
+    {"name": "Artificial Analysis", "url": "https://artificialanalysis.ai/"},
+    {"name": "Scale SEAL Leaderboards", "url": "https://scale.com/leaderboard"},
+    {"name": "LiveBench", "url": "https://livebench.ai/"},
+    {"name": "Vals AI", "url": "https://www.vals.ai/benchmarks"}
+  ],
+  "_result_schema": {
+    "value": "Zahl oder null",
+    "date": "YYYY-MM-DD (Datum der Quelle)",
+    "source": "URL",
+    "self_reported": "true, wenn vom Hersteller selbst gemessen",
+    "settings": "z. B. 'thinking high, 5 runs' – leer, wenn unbekannt"
+  }
+}
