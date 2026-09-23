@@ -1,0 +1,144 @@
+{
+  "issue": {
+    "date": "2026-09-23",
+    "kw": 39,
+    "hook": "Baseline: Stand der Dinge",
+    "late": false,
+    "baseline": true
+  },
+  "tldr": [
+    "Claude Opus 5.5, GPT-6 Sol/Luna und Grok 4.7 kamen alle innerhalb einer Woche (21.–22.09.) auf den Markt – Opus 5.5 ist 20 % günstiger als Opus 5 (4 $/20 $ statt 5 $/25 $ je 1M Tokens in/out).",
+    "Im einzigen aktuell unabhängig geprüften Agent-Benchmark (τ²-bench, Domain Banking) führt Qwen3.8-Max mit 55,2 % vor Claude Opus 5 (48,7 %) – bei weniger als einem Viertel des Preises (6 $ vs. 25 $ je 1M Output-Tokens).",
+    "Artificial Analysis und vier der fünf Kontext-Benchmarks (GAIA, BrowseComp, OSWorld, LMArena) waren diese Woche aus unserer Umgebung nicht erreichbar; Werte ohne verlässliche Quelle wurden bewusst weggelassen statt geschätzt.",
+    "SWE-bench Verified ist entgegen einer ersten Einschätzung nicht tot – ein GitHub-Beleg vom 18.09. zeigt weiter aktive Einreichungen –, konkrete neue Spitzenwerte sind aber noch nicht zweitquellen-bestätigt."
+  ],
+  "new_models": [
+    {
+      "name": "Claude Opus 5.5",
+      "vendor": "Anthropic",
+      "released": "2026-09-22",
+      "context": "1M Tokens (für 5.5 nicht separat bestätigt, aus Opus-5-Reihe übernommen)",
+      "price": "4 $ / 20 $",
+      "tools": "ja",
+      "n8n": "nativer Node (Modell evtl. noch nicht in offizieller Dropdown-Liste)",
+      "eu": "nicht verifizierbar",
+      "note": "20 % günstiger als Opus 5 und Cache-Read um 60 % reduziert (0,20 $ statt ca. 0,50 $ je 1M). Löst Opus 5 als Flaggschiff ab, der bleibt aber aktiv im Angebot. Für Agent-Workloads mit hohem Tool-Call-Volumen die günstigere Wahl in der Opus-Reihe.",
+      "source": "https://www.finout.io/blog/claude-opus-5.5-pricing-2026-what-anthropics-new-flagship-actually-costs"
+    },
+    {
+      "name": "GPT-6 Sol",
+      "vendor": "OpenAI",
+      "released": "2026-09-22",
+      "context": "1,05M Tokens",
+      "price": "2 $ / 10 $",
+      "tools": "ja (nur über Responses API, nicht Chat Completions)",
+      "n8n": "nativer Node",
+      "eu": "widersprüchliche Quellenlage (Foundry: teils Global/US-only, teils auch EU Data Zone)",
+      "note": "Halber Preis von GPT-5.6 Sol, ca. 90 Minuten nach Claude Opus 5.5 veröffentlicht. Tool-Calling in n8n nur nutzbar, wenn der Node intern die Responses API anspricht – bei Chat Completions funktioniert es laut Recherche nicht. Parallel erschien GPT-6 Luna (0,10 $/0,50 $) als Günstig-Variante; ein GPT-6-Terra existiert nicht.",
+      "source": "https://cellcog.ai/blog/gpt-6-sol-release-date/"
+    },
+    {
+      "name": "Grok 4.7",
+      "vendor": "xAI",
+      "released": "2026-09-21",
+      "context": "500k Tokens",
+      "price": "2 $ / 6 $",
+      "tools": "ja",
+      "n8n": "nativer Node (xAI Grok Chat Model, dynamische Modell-Liste)",
+      "eu": "kein bestätigtes EU-Hosting",
+      "note": "Gleicher Preis wie Grok 4.6, aber deutlich stärkere Coding-Benchmarks (CursorBench 4.0: 46,3 % vs. 40,4 %; DeepSWE v1.1: 71,0 % vs. 65,2 %). Für reine Kontextgröße bleibt Grok 4.3 mit 1M Tokens die xAI-Alternative.",
+      "source": "https://docs.x.ai/developers/models/grok-4.7"
+    }
+  ],
+  "benchmarks": [
+    {
+      "chart": "tau2_bench.png",
+      "title": "τ²-bench Banking: Qwen3.8-Max vorn, GPT-6 fehlt noch",
+      "insight": "Qwen3.8-Max führt die Domain banking_knowledge mit 55,2 % an, 6,5 Punkte vor Claude Opus 5. Für GPT-6 Astra/Sol/Luna und Claude Opus 5.5 – alle erst diese oder letzte Woche erschienen – gibt es hier noch keine unabhängigen Werte; das Leaderboard zieht erfahrungsgemäß mit einigen Wochen Verzug nach.",
+      "source_label": "τ²-bench Leaderboard",
+      "source": "https://github.com/sierra-research/tau2-bench"
+    },
+    {
+      "chart": "cost_vs_score.png",
+      "title": "Kosten vs. Agent-Leistung: Qwen3.8-Max führt bei halbem Preis",
+      "insight": "Kombiniert man den τ²-bench-Score mit dem Output-Preis, liegt Qwen3.8-Max (55,2 %, 6 $/1M) klar vor Claude Opus 5 (48,7 %, 25 $/1M) – mehr Leistung für weniger als ein Viertel des Preises. Grok 4.5 liegt bei gleichem Preis wie Qwen3.8-Max knapp dahinter. Den Artificial-Analysis-Intelligence-Index selbst konnten wir diese Woche nicht auswerten: artificialanalysis.ai war aus unserer Umgebung nicht erreichbar, und die verfügbaren Sekundärquellen widersprachen sich zu stark für ein belastbares Chart.",
+      "source_label": "τ²-bench + Hersteller-Preisangaben",
+      "source": "https://github.com/sierra-research/tau2-bench"
+    },
+    {
+      "chart": "terminal_bench.png",
+      "title": "Terminal-Bench 2.1: Gemini 3.8 Flash knapp vor DeepSeek V4-Pro",
+      "insight": "Laut Drittanbieter-Aggregatoren (die offizielle Seite tbench.ai war aus unserer Umgebung nicht erreichbar) führt Gemini 3.8 Flash mit 89,4 % knapp vor dem offenen DeepSeek V4-Pro mit 87,9 % – dem laut gleicher Quelle stärksten Open-Weights-Modell im Test. Diese Werte sind nicht primärquellen-verifiziert und sollten vor einer Investitionsentscheidung gegengeprüft werden.",
+      "source_label": "llm-stats.com (Sekundärquelle)",
+      "source": "https://llm-stats.com/benchmarks/terminal-bench-2.1"
+    }
+  ],
+  "changes": [
+    {
+      "title": "DeepSeek V4-Pro: Abschaltung angedroht und wieder zurückgenommen",
+      "text": "DeepSeek kündigte am 10.09. mit dem Launch von V4.1 Flash an, V4-Pro zum 14.09. abzuschalten – nach Entwickler-Protest wurde das am 11.09. zurückgenommen. V4-Pro bleibt unverändert im Angebot (1,32 $/3,96 $ Peak, 0,66 $/1,98 $ Off-Peak je 1M Tokens).",
+      "source": "https://www.orcarouter.ai/blog/deepseek-v4-1-flash-v4-pro-retirement"
+    },
+    {
+      "title": "Gemini 2.5 Flash: Abschaltung zum 16.10.2026",
+      "text": "Google stellt die Vorgänger-Flash-Generation zum 16.10. ein; Nachfolger ist die 3.5/3.8-Flash-Generation, die zusätzlich EU-Vertex-Regionen (Belgien, Niederlande, Finnland, Polen) unterstützt.",
+      "source": "https://felloai.com/ai-models-discontinued/"
+    },
+    {
+      "title": "Perplexity: Sonar-API-Umbau zum 27.09.2026",
+      "text": "Die Sonar Chat Completions API wird am 27.09. abgeschaltet und durch eine neue 'Agent API' ersetzt. Preise bleiben laut Ankündigung unverändert, es handelt sich um einen Verpackungswechsel; n8n passt den eigenen Perplexity-Node entsprechend an (Resource-Default wechselt von Chat zu Agent).",
+      "source": "https://llmgateway.io/blog/perplexity-sonar-api-retirement"
+    },
+    {
+      "title": "SWE-bench Verified: Status-Korrektur",
+      "text": "Wir hatten das Leaderboard wegen fehlender neuer Werte seit Februar als tot eingestuft. Ein GitHub-Beleg vom 18.09. (PR #487 im swe-bench/experiments-Repo) zeigt, dass weiterhin neue Einreichungen angenommen werden – Status auf aktiv korrigiert. Konkrete neue Spitzenwerte sind aber noch nicht zweitquellen-bestätigt.",
+      "source": "https://github.com/SWE-bench/experiments/pull/487"
+    },
+    {
+      "title": "Grok: alte Modell-IDs leiten automatisch auf 4.3 um",
+      "text": "Seit 15.08. sind Grok 4, Grok 4 Fast, Grok 4.1 Fast, Grok 3 und grok-code-fast-1 abgeschaltet. Wer diese IDs noch in n8n-Workflows fest codiert hat, wird automatisch auf Grok 4.3 umgeleitet – Preise und Verhalten weichen ab, ein manuelles Update lohnt sich trotzdem.",
+      "source": "https://docs.x.ai/developers/migration/may-15-retirement"
+    }
+  ],
+  "use_cases": [
+    {"use_case": "Klassifikation/Routing", "pick": "GPT-6 Luna", "alt": "Gemini 3.5 Flash-Lite", "why": "0,10 $/0,50 $ je 1M Tokens, für kurze Routing-Prompts in hoher Stückzahl kaum zu unterbieten."},
+    {"use_case": "Dokument-/E-Mail-Extraktion", "pick": "Gemini 3.8 Flash", "alt": "Mistral Small 4", "why": "Structured Output stabil, 1M Kontext, EU-Vertex-Regionen (Belgien/Niederlande) verfügbar – relevant für Exposé- und Kundendaten."},
+    {"use_case": "Tool-Calling-Agent in n8n", "pick": "Qwen3.8-Max", "alt": "Claude Opus 5", "why": "Höchster τ²-bench-Wert im unabhängigen Leaderboard (55,2 %), nativer n8n-Node vorhanden, ein Viertel des Opus-5-Preises."},
+    {"use_case": "Recherche/Web", "pick": "Perplexity Sonar Pro", "alt": "Sonar Reasoning Pro", "why": "Eingebaute Websuche statt eigenem Such-Tool; ab 27.09. läuft die Integration über die neue Agent API, n8n-Node passt sich automatisch an."},
+    {"use_case": "Coding", "pick": "Grok 4.7", "alt": "DeepSeek V4-Pro (Open Weights)", "why": "Stärkste Coding-Benchmarks dieser Woche (CursorBench 4.0: 46,3 %); DeepSeek V4-Pro als offene Alternative mit 87,9 % in Terminal-Bench 2.1 (Sekundärquelle)."},
+    {"use_case": "Long Context", "pick": "Llama 4.5 Scout", "alt": "Grok 4.3", "why": "10M Tokens Kontextfenster, größtes im Roster – aber Achtung: Llama-4-Lizenz schließt EU-Firmen von multimodalen (Vision-)Fähigkeiten aus, Grok 4.3 (1M) als Alternative ohne diese Einschränkung."},
+    {"use_case": "Günstig & schnell", "pick": "GPT-6 Luna", "alt": "DeepSeek V4.1 Flash", "why": "0,10 $/0,50 $ je 1M Tokens; DeepSeek V4.1 Flash als offene Alternative mit Peak/Off-Peak-Preisen (0,30 $/1,20 $ bzw. 0,15 $/0,60 $)."}
+  ],
+  "tinkellect": {
+    "intro": "Drei konkrete Ansatzpunkte für die laufenden Makler-Workflows:",
+    "items": [
+      {"title": "Exposé-Extraktion", "text": "Gemini 3.8 Flash über den nativen 'Google Gemini Chat Model'-Node, mit Vertex-EU-Region (Belgien/Niederlande) für DSGVO-konforme Verarbeitung von Objektdaten; Structured Output für feste Exposé-Felder nutzen."},
+      {"title": "Anfragen-Routing", "text": "GPT-6 Luna über den nativen OpenAI-Node für die Erstklassifikation von Anfragen (Kauf/Miete/Besichtigung) – bei hohem Volumen kaum spürbare Kosten. Achtung: Tool-Calling funktioniert nur, wenn der Node intern die Responses API nutzt."},
+      {"title": "Datenhoheit bei Maklerkontakten", "text": "Wo Kundendaten die EU nicht verlassen dürfen, den nativen 'Mistral Cloud Chat Model'-Node einsetzen – La Plateforme verarbeitet standardmäßig in Paris, GDPR-first positioniert."}
+    ]
+  },
+  "n8n_updates": [
+    {"title": "Databricks Chat Model Node freigeschaltet", "text": "Mit v2.41.0 (22.09.) wurde ein neuer nativer LLM-Chat-Model-Node für Databricks/Unity AI Gateway im Node-Picker sichtbar gemacht (vorher hidden gemerged).", "source": "https://github.com/n8n-io/n8n/pull/38918"},
+    {"title": "MiniMax Chat Model: dynamische Modell-Liste", "text": "Seit v2.40.0 (15.09.) lädt der MiniMax-Node die verfügbaren Modelle von der API statt aus einer hartkodierten Liste.", "source": "https://github.com/n8n-io/n8n/blob/master/CHANGELOG.md"},
+    {"title": "Anthropic-Node: Thinking-Block-Fixes", "text": "Über mehrere Versionen (v2.38.1–v2.41.0) wurde die Behandlung von Thinking-Blocks bei Tool-Calls korrigiert – relevant für alle, die Claude mit Extended Thinking und Tools in Agents kombinieren.", "source": "https://github.com/n8n-io/n8n/blob/master/CHANGELOG.md"},
+    {"title": "Structured-Output-Parser-Validator im Workflow-SDK", "text": "Seit v2.39.0 (08.09.) validiert das Workflow-SDK Structured-Output-Parser-Konfigurationen.", "source": "https://github.com/n8n-io/n8n/blob/master/CHANGELOG.md"}
+  ],
+  "sources": [
+    {"title": "τ²-bench Leaderboard (Sierra Research)", "url": "https://github.com/sierra-research/tau2-bench"},
+    {"title": "Berkeley Function Calling Leaderboard – Rohdaten", "url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/gh-pages/data_overall.csv"},
+    {"title": "SWE-bench – Verified-Leaderboard weiter aktiv (PR #487)", "url": "https://github.com/SWE-bench/experiments/pull/487"},
+    {"title": "Terminal-Bench 2.1 (Drittanbieter-Auswertung)", "url": "https://llm-stats.com/benchmarks/terminal-bench-2.1"},
+    {"title": "Artificial Analysis – Models", "url": "https://artificialanalysis.ai/leaderboards/models"},
+    {"title": "Claude Opus 5.5 Pricing", "url": "https://www.finout.io/blog/claude-opus-5.5-pricing-2026-what-anthropics-new-flagship-actually-costs"},
+    {"title": "GPT-6 Sol/Luna Release", "url": "https://cellcog.ai/blog/gpt-6-sol-release-date/"},
+    {"title": "Grok 4.7 Modelldokumentation", "url": "https://docs.x.ai/developers/models/grok-4.7"},
+    {"title": "Grok Model-Retirement (15.05.2026)", "url": "https://docs.x.ai/developers/migration/may-15-retirement"},
+    {"title": "DeepSeek V4.1 Flash / V4-Pro Retirement-Hin-und-her", "url": "https://www.orcarouter.ai/blog/deepseek-v4-1-flash-v4-pro-retirement"},
+    {"title": "Gemini-Modelle: Abschaltungen 2026", "url": "https://felloai.com/ai-models-discontinued/"},
+    {"title": "Perplexity Sonar API Retirement (27.09.2026)", "url": "https://llmgateway.io/blog/perplexity-sonar-api-retirement"},
+    {"title": "n8n CHANGELOG.md", "url": "https://github.com/n8n-io/n8n/blob/master/CHANGELOG.md"},
+    {"title": "n8n PR #38918 – Databricks Chat Model Node", "url": "https://github.com/n8n-io/n8n/pull/38918"},
+    {"title": "Llama 4.5 Release Brief", "url": "https://presenc.ai/research/llama-4-5-release-brief"}
+  ],
+  "closing": "Dies ist die Baseline-Ausgabe: das Modell-Roster ist jetzt vollständig angelegt, ab der nächsten Ausgabe gibt es Wochendeltas. Rückfragen oder Wunschthemen einfach auf diese Mail antworten."
+}

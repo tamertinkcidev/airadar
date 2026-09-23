@@ -1,0 +1,55 @@
+{
+  "charts": [
+    {
+      "type": "hbar",
+      "file": "tau2_bench.png",
+      "title": "τ²-bench Banking: Qwen3.8-Max vorn, GPT-6 fehlt noch",
+      "subtitle": "Stand 04.08.2026 (Sierra-Leaderboard) · unabhängig · Domain banking_knowledge v1.0.1 · höher = besser",
+      "unit": " %",
+      "xlim": [0, 65],
+      "highlight": ["Qwen3.8-Max", "GPT-5.6 Sol"],
+      "data": [
+        ["Qwen3.8-Max", 55.2],
+        ["Claude Opus 5", 48.7],
+        ["Grok 4.5", 47.9],
+        ["GPT-5.6 Sol", 46.9],
+        ["GPT-5.5", 44.6],
+        ["Muse Spark 1.1", 40.5],
+        ["Claude Opus 4.7", 40.2],
+        ["Kimi K3", 37.1]
+      ],
+      "source": "τ²-bench Leaderboard (GitHub, Sierra Research)"
+    },
+    {
+      "type": "scatter",
+      "file": "cost_vs_score.png",
+      "title": "Kosten vs. Agent-Leistung: Qwen3.8-Max führt bei halbem Preis",
+      "subtitle": "τ²-bench-Score (banking_knowledge) vs. Output-Preis · Artificial Analysis Index diese Woche nicht auswertbar (Quelle blockiert)",
+      "x_label": "USD je 1 Mio. Output-Tokens (log)",
+      "y_label": "τ²-bench pass^1 in %",
+      "x_log": true,
+      "points": [
+        {"label": "Claude Opus 5", "x": 25, "y": 48.7},
+        {"label": "GPT-5.6 Sol", "x": 20, "y": 46.9},
+        {"label": "Kimi K3 (Open Weights)", "x": 15, "y": 37.1},
+        {"label": "Grok 4.5", "x": 6, "y": 47.9, "highlight": true},
+        {"label": "Qwen3.8-Max", "x": 6, "y": 55.2, "highlight": true}
+      ],
+      "source": "τ²-bench Leaderboard (Score) + Hersteller-Preisangaben (Preis, siehe data/models.json)"
+    },
+    {
+      "type": "hbar",
+      "file": "terminal_bench.png",
+      "title": "Terminal-Bench 2.1: Gemini 3.8 Flash knapp vorn, DeepSeek dicht dahinter",
+      "subtitle": "Stand ca. 22.09.2026 · laut Drittanbieter-Aggregator (llm-stats.com/snorkel.ai) – tbench.ai in dieser Umgebung blockiert, nicht direkt verifiziert",
+      "unit": " %",
+      "xlim": [0, 100],
+      "highlight": ["DeepSeek V4-Pro (Open Weights)"],
+      "data": [
+        ["Gemini 3.8 Flash", 89.4],
+        ["DeepSeek V4-Pro (Open Weights)", 87.9]
+      ],
+      "source": "llm-stats.com/benchmarks/terminal-bench-2.1 (Sekundärquelle, primär blockiert)"
+    }
+  ]
+}

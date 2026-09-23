@@ -1,0 +1,20 @@
+{
+  "date": "2026-09-23",
+  "subject": "Tinkellect AI Radar – KW39: Baseline: Stand der Dinge",
+  "html_file": "out/2026-09-23/newsletter.html",
+  "text_file": "out/2026-09-23/newsletter.txt",
+  "html_bytes": 32349,
+  "approx_tokens": 8986,
+  "image_urls": [
+    "https://raw.githubusercontent.com/tamertinkcidev/airadar/main/charts/2026-09-23/tau2_bench.png",
+    "https://raw.githubusercontent.com/tamertinkcidev/airadar/main/charts/2026-09-23/cost_vs_score.png",
+    "https://raw.githubusercontent.com/tamertinkcidev/airadar/main/charts/2026-09-23/terminal_bench.png"
+  ],
+  "chart_files": [
+    "/home/user/airadar/charts/2026-09-23/tau2_bench.png",
+    "/home/user/airadar/charts/2026-09-23/cost_vs_score.png",
+    "/home/user/airadar/charts/2026-09-23/terminal_bench.png"
+  ],
+  "warnings": [],
+  "errors": []
+}
