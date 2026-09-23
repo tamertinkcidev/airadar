@@ -183,7 +183,7 @@
         }
       },
       "last_update": "2026-09-09",
-      "note": "Aktuelle Rangliste nur für Domäne banking_knowledge (v1.0.1); airline/retail/telecom ohne neue Läufe seit 2025. Offizielle Seite taubench.com war nicht erreichbar; Daten aus dem GitHub-Repo."
+      "note": "Aktuelle Rangliste nur für Domäne banking_knowledge (v1.0.1); airline/retail/telecom ohne neue Läufe seit 2025. Offizielle Seite taubench.com war nicht erreichbar; Daten aus dem GitHub-Repo. Lauf 23.09.2026: manifest.json direkt per WebFetch geprüft – keine neuen Text-Agent-Einträge seit 04.08.2026, gpt-5-6-sol bleibt Spitzenwert. Sierra hat zusätzlich einen separaten Voice-Track eingeführt (u. a. qwen3-5-omni-plus-realtime, grok-voice-think-fast-2-0, gpt-live-1-diamond-alpha, ab 06.08.–09.09.2026) – andere Domäne/Kategorie, nicht mit banking_knowledge vergleichbar, daher nicht übernommen."
     },
     "bfcl": {
       "name": "BFCL (Berkeley Function Calling Leaderboard)",
@@ -342,12 +342,12 @@
         }
       },
       "last_update": "2026-04-12",
-      "note": "Letztes Update 2026-04-12 (>90 Tage), neueste Modelle Stand ~Nov 2025. Ersatzvorschlag: τ²-bench als Tool-Calling-Core, BFCL nur noch Kontext."
+      "note": "Letztes Update 2026-04-12 (>90 Tage), neueste Modelle Stand ~Nov 2025. Ersatzvorschlag: τ²-bench als Tool-Calling-Core, BFCL nur noch Kontext. Lauf 23.09.2026: offizielle Rohdaten-CSV (raw.githubusercontent.com/ShishirPatil/gorilla/gh-pages/data_overall.csv) direkt per WebFetch geprüft – jüngster Eintrag weiterhin 11.12.2025 ('GPT-5.2-2025-12-11 (FC)'), keine 2026er-Einträge. Ein Aggregator (llm-stats.com) behauptet ein Update auf 'Sept. 2026, Spitzenreiter Atria Dawn Preview 0,770' – das widerspricht der Primärquelle und wurde NICHT übernommen. Keine BFCL-V5-Ankündigung von Berkeley gefunden. Status deprecated bestätigt."
     },
     "swe_bench_verified": {
       "name": "SWE-bench Verified",
       "category": "core",
-      "status": "deprecated",
+      "status": "active",
       "measures": "Reale GitHub-Issues lösen (500 geprüfte Aufgaben)",
       "why_relevant": "Proxy für Code-/Skript-Generierung in Workflows und für agentische Ausdauer",
       "metric": "% resolved",
@@ -461,7 +461,7 @@
         }
       },
       "last_update": "2026-02-26",
-      "note": "Neuester Eintrag 2026-02-26 (>90 Tage). Ersatzvorschlag: SWE-bench Pro (Scale) oder Terminal-Bench 2.x als Coding-Core."
+      "note": "Korrektur 23.09.2026: Status-Downgrade auf 'deprecated' war voreilig – github.com/SWE-bench/experiments/pull/487 (18.09.2026, primärquellen-belegt) zeigt, dass das Verified-Leaderboard weiterhin aktiv neue Einreichungen annimmt (~134 Einreichungen Stand Juli 2026). Konkrete neue Spitzenwerte konnten aber nicht primärquellen-verifiziert werden: die JSON-Datei im offiziellen Repo lieferte beim Abruf nur den 'Multilingual'-Teil (jüngster Wert dort 13.02.2026), nicht die Verified-Sektion; swebench.com selbst war blockiert. Sekundärquellen behaupten Sättigung bei ~95-96% mit teils nicht verifizierbaren Modellnamen ('Claude Mythos 5') – NICHT übernommen. Ergänzung: SWE-bench Pro (Scale AI) existiert als aktiver Nachfolge-Benchmark für gesättigte Vergleiche – https://labs.scale.com/leaderboard/swe_bench_pro_public (Existenz bestätigt über github.com/scaleapi/SWE-bench_Pro-os, Werte selbst nicht primärquellen-geprüft)."
     },
     "terminal_bench": {
       "name": "Terminal-Bench",
@@ -473,8 +473,25 @@
       "higher_is_better": true,
       "leaderboard": "https://www.tbench.ai/",
       "independent": true,
-      "results": {},
-      "note": "Baseline 2026-09-23: tbench.ai in der Umgebung gesperrt, keine Werte. Laut Suchergebnis existiert Terminal-Bench 2.1."
+      "results": {
+        "gemini-3-8-flash": {
+          "value": 89.4,
+          "date": "2026-09-22",
+          "source": "https://llm-stats.com/benchmarks/terminal-bench-2.1",
+          "self_reported": false,
+          "settings": "Terminal-Bench 2.1; Wert laut Drittanbieter-Aggregator (llm-stats.com/snorkel.ai), primäre Quelle tbench.ai in dieser Umgebung gesperrt und daher NICHT direkt verifiziert – vor nächster Ausgabe mit zweitem Kanal gegenprüfen.",
+          "name": "Gemini 3.8 Flash"
+        },
+        "deepseek-v4-pro": {
+          "value": 87.9,
+          "date": "2026-09-22",
+          "source": "https://llm-stats.com/benchmarks/terminal-bench-2.1",
+          "self_reported": false,
+          "settings": "Terminal-Bench 2.1, Rang 6, bestes Open-Source-Modell; Wert laut Drittanbieter-Aggregator, primäre Quelle gesperrt, nicht direkt verifiziert.",
+          "name": "DeepSeek V4-Pro (0813)"
+        }
+      },
+      "note": "Baseline 2026-09-23: tbench.ai in der Umgebung weiterhin gesperrt (EGRESS_BLOCKED), keine direkte Primärverifikation möglich. Terminal-Bench 2.1 existiert und wird laut mehreren unabhängigen Drittanbieter-Aggregatoren (llm-stats.com, snorkel.ai, codingfleet.com, Stand Sept. 2026) aktiv gepflegt (35 bewertete Modelle, Ø 0,7). Werte oben mit expliziter Sekundärquellen-Kennzeichnung übernommen (Regel 2.2: Aggregator statt unabhängigem Leaderboard, da Primärquelle nicht erreichbar). DeepSeek-V4-Flash-0731 wird als günstigstes Top-10%-Modell genannt (0,827, 0,09$/1M Input) – nicht übernommen, da diese genaue Modellversion nicht in unserem Roster geführt wird."
     },
     "aa_intelligence_index": {
       "name": "Artificial Analysis Intelligence Index",
@@ -487,7 +504,7 @@
       "leaderboard": "https://artificialanalysis.ai/leaderboards/models",
       "independent": true,
       "results": {},
-      "note": "Baseline 2026-09-23: artificialanalysis.ai gesperrt; Werte nur aus Such-Snippets – nicht übernommen (Regel 2.1)."
+      "note": "Baseline 2026-09-23: artificialanalysis.ai weiterhin gesperrt (EGRESS_BLOCKED). Verschiedene Suchanfragen zu einer Top-10-Rangliste widersprachen sich untereinander (unterschiedliche Skalen/Snapshots, teils nicht absteigend sortiert trotz Rang-Nummerierung) – keine belastbare Rangliste extrahierbar, daher weiterhin keine Werte übernommen (Regel 1: kein Schätzen). Zwei Einzeldatenpunkte wurden über mehrere Suchanfragen hinweg konsistent wiederholt (Claude Opus 5.5: Index 56–58, Preis 4$/20$ je 1M, ~92-93 Tok/s; GPT-5.6 Sol: Index 39–47 je nach Reasoning-Effort, Preis 4$/20$ je 1M, 60–84 Tok/s) – zu dünn für ein Chart, aber als Randnotiz für 'Was sich geändert hat' brauchbar. Möglicher Grund für die Widersprüche: AA hat die Intelligence-Index-Methodik laut einer Quelle am 19.09.2026 auf v4.3.2 revidiert (vollständige Neubewertung) – nicht zweitquellen-bestätigt."
     },
     "gaia": {
       "name": "GAIA",
@@ -500,7 +517,7 @@
       "leaderboard": "https://huggingface.co/spaces/gaia-benchmark/leaderboard",
       "independent": true,
       "results": {},
-      "note": "Baseline 2026-09-23: Leaderboard in der Umgebung nicht abrufbar; Pflegestatus ungeprüft."
+      "note": "Baseline 2026-09-23: huggingface.co weiterhin gesperrt. Aggregator-Snippets widersprechen sich stark und enthalten nicht verifizierbare Namen (u. a. 'Agents-A1-4B' mit 95,1% – unplausibel) – nicht übernommen. Princeton HAL (hal.cs.princeton.edu/gaia) könnte ein aktiveres Alternativ-Leaderboard mit eigenem Agent-Scaffolding sein (Claude Sonnet 4.5 74,55% laut Suchsnippet) – bei nächster Ausgabe mit direktem Fetch prüfen. Pflegestatus des originalen HF-Space weiterhin ungeprüft."
     },
     "browsecomp": {
       "name": "BrowseComp",
@@ -513,7 +530,7 @@
       "leaderboard": "https://openai.com/index/browsecomp/",
       "independent": false,
       "results": {},
-      "note": "Baseline 2026-09-23: Leaderboard in der Umgebung nicht abrufbar; Pflegestatus ungeprüft."
+      "note": "Baseline 2026-09-23: openai.com weiterhin gesperrt. Wichtiger Befund: es existiert kein offizielles, unabhängig geprüftes BrowseComp-Leaderboard – alle kursierenden Werte sind Selbstangaben, und Scores hängen stark von Tool-/Kontext-Strategie ab (Systemmessung statt reiner Modellmessung). Gefundene Aggregator-Zahlen ('Atria Dawn Preview' 92,5%, 'GPT-6 Astra' 91,5% u.a.) nicht primärquellen-verifizierbar und teils widersprüchlich – nicht übernommen. independent bleibt false."
     },
     "osworld": {
       "name": "OSWorld(-Verified)",
@@ -526,7 +543,7 @@
       "leaderboard": "https://os-world.github.io/",
       "independent": true,
       "results": {},
-      "note": "Baseline 2026-09-23: Leaderboard in der Umgebung nicht abrufbar; Pflegestatus ungeprüft."
+      "note": "Baseline 2026-09-23: os-world.github.io weiterhin gesperrt. Aggregator (Stand 22.09.2026, angeblich 24 gelistete Modelle) nennt Werte für 'Claude Fable 5' und 'Claude Mythos 5' (85%) – Modellversionen/Namen nicht sicher unseren Roster-IDs zuordenbar und nicht primärquellen-geprüft, daher nicht übernommen. Aktivitätsstatus laut Aggregator 'aktiv', aber nicht primärquellen-bestätigt."
     },
     "ifbench": {
       "name": "IFBench",
@@ -539,7 +556,7 @@
       "leaderboard": "https://github.com/allenai/IFBench",
       "independent": true,
       "results": {},
-      "note": "Baseline 2026-09-23: Leaderboard in der Umgebung nicht abrufbar; Pflegestatus ungeprüft."
+      "note": "Baseline 2026-09-23: Repo selbst per WebFetch erreichbar, enthält aber KEIN eigenes Leaderboard/Scoreboard – nur Eval-Code und Verifier-Funktionen, Ergebnisse müssen selbst gegen eigene Modelle gefahren werden. Artificial Analysis integriert IFBench offenbar als Teilkomponente ihres Intelligence Index (Blogpost-Titel gefunden) – lebt also als Bestandteil des AA-Index weiter, nicht als eigenständiges Leaderboard. Keine eigenständigen, primärquellen-geprüften Werte verfügbar."
     },
     "lmarena_text": {
       "name": "LMArena (Text)",
@@ -552,7 +569,7 @@
       "leaderboard": "https://lmarena.ai/leaderboard",
       "independent": true,
       "results": {},
-      "note": "Baseline 2026-09-23: Leaderboard in der Umgebung nicht abrufbar; Pflegestatus ungeprüft."
+      "note": "Baseline 2026-09-23: lmarena.ai weiterhin gesperrt. Aggregator-Snippets zu Top-Modellen widersprechen sich (unterschiedliche 'Spitzenmodelle' für denselben Zeitraum, u. a. nicht verifizierbares 'claude-opus-5-max') – keine belastbare Top-10-Liste extrahierbar. LMArena selbst dürfte als bekanntes Community-Voting-Leaderboard weiter aktiv sein, aber ohne direkten Fetch nicht mit konkreten Werten belegbar."
     }
   },
   "aggregators": [
