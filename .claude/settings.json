@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Read", "Edit", "Write", "Glob", "Grep",
+      "WebSearch",
+      "WebFetch",
+      "Bash(python:*)", "Bash(python3:*)", "Bash(bash bootstrap.sh)",
+      "Bash(git status:*)", "Bash(git add:*)", "Bash(git commit:*)", "Bash(git push:*)", "Bash(git pull:*)",
+      "Bash(git checkout:*)", "Bash(git log:*)", "Bash(git diff:*)",
+      "Bash(mkdir:*)", "Bash(cp:*)", "Bash(mv:*)", "Bash(ls:*)", "Bash(cat:*)", "Bash(date:*)"
+    ],
+    "deny": [
+      "Read(./.env)", "Read(./.env.*)", "Edit(./.env)", "Write(./.env)",
+      "Bash(rm -rf:*)", "Bash(git push --force:*)", "Bash(curl:*)", "Bash(wget:*)"
+    ]
+  }
+}

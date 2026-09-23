@@ -1,0 +1,8 @@
+# Laufzeit-Artefakte: out/ wird nach dem Versand nach archive/ verschoben
+out/
+# Zugangsdaten (nur lokaler SMTP-Fallback)
+.env
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

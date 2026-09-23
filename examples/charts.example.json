@@ -1,0 +1,71 @@
+{
+  "_doc": "BEISPIEL – alle Werte frei erfunden, nur das Format zählt. Dateiname = Referenz in content.json ('chart'). Typen: hbar (Rangliste), delta (Veränderung ggü. Vorwoche, Vorzeichen), scatter (Kosten vs. Leistung).",
+  "charts": [
+    {
+      "type": "hbar",
+      "file": "tau2_bench.png",
+      "title": "τ²-bench – Agent-Erfolgsquote (pass^1)",
+      "subtitle": "Stand 27.09.2026 · unabhängiges Leaderboard · höher = besser",
+      "unit": " %",
+      "xlim": [0, 100],
+      "highlight": ["Modell Alpha 3"],
+      "data": [
+        ["Modell Alpha 3", 84.2],
+        ["Modell Beta Pro", 79.5],
+        ["Modell Gamma 2", 71.0],
+        ["Modell Delta Large", 66.8],
+        ["Modell Epsilon Open", 58.3],
+        ["Modell Zeta Mini", 41.9]
+      ],
+      "source": "τ²-bench Leaderboard (GitHub)"
+    },
+    {
+      "type": "hbar",
+      "file": "bfcl.png",
+      "title": "BFCL – Tool-Calling-Genauigkeit gesamt",
+      "subtitle": "Stand 27.09.2026 · Berkeley Function Calling Leaderboard",
+      "unit": " %",
+      "xlim": [0, 100],
+      "highlight": ["Modell Beta Pro"],
+      "data": [
+        ["Modell Beta Pro", 78.1],
+        ["Modell Alpha 3", 76.4],
+        ["Modell Epsilon Open", 72.9],
+        ["Modell Gamma 2", 70.2],
+        ["Modell Zeta Mini", 61.5]
+      ],
+      "source": "gorilla.cs.berkeley.edu"
+    },
+    {
+      "type": "scatter",
+      "file": "cost_vs_index.png",
+      "title": "Kosten vs. Leistung",
+      "subtitle": "Artificial Analysis Intelligence Index gegen Output-Preis · Stand 27.09.2026",
+      "x_label": "USD je 1 Mio. Output-Tokens (log)",
+      "y_label": "Intelligence Index",
+      "x_log": true,
+      "points": [
+        {"label": "Modell Alpha 3", "x": 25, "y": 71, "highlight": true},
+        {"label": "Modell Beta Pro", "x": 15, "y": 69},
+        {"label": "Modell Gamma 2", "x": 10, "y": 63},
+        {"label": "Modell Delta Large", "x": 4, "y": 58},
+        {"label": "Modell Epsilon Open", "x": 1.1, "y": 55, "highlight": true},
+        {"label": "Modell Zeta Mini", "x": 0.4, "y": 42}
+      ],
+      "source": "artificialanalysis.ai"
+    },
+    {
+      "type": "delta",
+      "file": "delta_week.png",
+      "title": "Veränderung gegenüber der Vorwoche",
+      "subtitle": "τ²-bench, Prozentpunkte · nur Modelle mit neuen Werten",
+      "unit": " pp",
+      "data": [
+        ["Modell Alpha 3", 2.1],
+        ["Modell Gamma 2", 0.6],
+        ["Modell Zeta Mini", -1.4]
+      ],
+      "source": "Vergleich mit data/history/2026-09-20-benchmarks.json"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "_doc": "Modell-Roster. Wird vom Radar jede Woche gepflegt. Beim ersten Lauf (Baseline) werden die aktuellen Modelle aller Anbieter recherchiert und eingetragen. Nichts schätzen: Felder ohne Beleg bleiben null. 'verified' = im Lauf gegen eine Quelle geprüft.",
+  "updated": null,
+  "baseline_done": false,
+  "vendors": {
+    "anthropic": {"name": "Anthropic", "n8n": "Anthropic Chat Model (nativer Node); AWS Bedrock; Google Vertex AI", "eu_hosting": "AWS Bedrock eu-central-1 / Google Vertex europe-west (zu prüfen)", "verified": false},
+    "openai": {"name": "OpenAI", "n8n": "OpenAI Chat Model (nativer Node); Azure OpenAI", "eu_hosting": "Azure OpenAI EU-Regionen; OpenAI EU Data Residency (zu prüfen)", "verified": false},
+    "google": {"name": "Google", "n8n": "Google Gemini Chat Model (nativer Node); Google Vertex AI", "eu_hosting": "Vertex AI EU-Regionen (zu prüfen)", "verified": false},
+    "xai": {"name": "xAI", "n8n": "xAI Grok Chat Model (nativer Node) oder OpenAI-kompatibel (zu prüfen)", "eu_hosting": "keine bekannt (zu prüfen)", "verified": false},
+    "perplexity": {"name": "Perplexity", "n8n": "Perplexity Node (Recherche, nicht als Agent-LLM) (zu prüfen)", "eu_hosting": "keine bekannt (zu prüfen)", "verified": false},
+    "moonshot": {"name": "Moonshot AI (Kimi)", "n8n": "OpenRouter Chat Model oder OpenAI-kompatibler Endpoint (Base-URL) (zu prüfen)", "eu_hosting": "Open Weights → EU-Provider über OpenRouter (zu prüfen)", "verified": false},
+    "mistral": {"name": "Mistral AI", "n8n": "Mistral Cloud Chat Model (nativer Node)", "eu_hosting": "EU-nativ (Paris) (zu prüfen)", "verified": false},
+    "deepseek": {"name": "DeepSeek", "n8n": "DeepSeek Chat Model (nativer Node) oder OpenRouter (zu prüfen)", "eu_hosting": "Open Weights → Bedrock/Vertex/Azure/EU-Provider (zu prüfen)", "verified": false},
+    "alibaba": {"name": "Alibaba (Qwen)", "n8n": "OpenRouter oder OpenAI-kompatibel (DashScope) (zu prüfen)", "eu_hosting": "Open Weights → EU-Provider (zu prüfen)", "verified": false},
+    "meta": {"name": "Meta (Llama)", "n8n": "AWS Bedrock, Groq, Ollama, OpenRouter (zu prüfen)", "eu_hosting": "Open Weights → Bedrock EU / Self-Hosting (zu prüfen)", "verified": false},
+    "zhipu": {"name": "Zhipu AI (GLM)", "n8n": "OpenRouter oder OpenAI-kompatibel (zu prüfen)", "eu_hosting": "Open Weights → EU-Provider (zu prüfen)", "verified": false},
+    "minimax": {"name": "MiniMax", "n8n": "OpenRouter oder OpenAI-kompatibel (zu prüfen)", "eu_hosting": "Open Weights → EU-Provider (zu prüfen)", "verified": false}
+  },
+  "models": [],
+  "_model_schema": {
+    "id": "kurz, kebab-case, z. B. claude-opus-5-5",
+    "name": "Anzeigename",
+    "vendor": "Schlüssel aus vendors",
+    "released": "YYYY-MM-DD oder null",
+    "context_tokens": "Zahl oder null",
+    "price_in_per_m": "USD je 1 Mio. Input-Tokens oder null",
+    "price_out_per_m": "USD je 1 Mio. Output-Tokens oder null",
+    "tool_calling": "true/false/null",
+    "structured_output": "true/false/null",
+    "n8n_path": "nativer Node | OpenAI-kompatibel | OpenRouter | Bedrock/Vertex/Azure",
+    "eu_hosting": "Text oder null",
+    "open_weights": "true/false",
+    "status": "active | deprecated",
+    "source": "URL",
+    "first_seen": "YYYY-MM-DD",
+    "last_verified": "YYYY-MM-DD"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "brand_name": "Tinkellect",
+  "newsletter_title": "Tinkellect AI Radar",
+  "tagline": "KI-Automation für den Mittelstand",
+  "website": "https://tinkellect.de",
+  "colors": {
+    "header_bg": "#0B0F19",
+    "header_text": "#FFFFFF",
+    "accent": "#4F7DFF",
+    "accent_soft": "#E8EEFF",
+    "text": "#111827",
+    "text_muted": "#6B7280",
+    "border": "#E5E7EB",
+    "surface": "#F6F7FB",
+    "chart_bar": "#B8C6F5",
+    "positive": "#16A34A",
+    "negative": "#DC2626"
+  },
+  "fonts": {
+    "email_stack": "-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
+    "display_ttf": "assets/fonts/BrunoAce-Regular.ttf"
+  },
+  "logo_url": ""
+}

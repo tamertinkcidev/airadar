@@ -1,0 +1,15 @@
+{
+  "assets_base_url": "https://raw.githubusercontent.com/tamertinkcidev/airadar/main",
+  "web_base_url": "",
+  "sender_name": "Tinkellect AI Radar",
+  "footer_lines": [
+    "Tinkellect · KI-Automation mit n8n für den Mittelstand · tinkellect.de",
+    "Interner Wochen-Radar. Alle Benchmark-Werte mit Quelle und Datum; Herstellerangaben sind markiert."
+  ],
+  "limits": {
+    "html_max_bytes": 92000,
+    "min_sources": 6,
+    "min_charts": 3,
+    "max_charts": 5
+  }
+}

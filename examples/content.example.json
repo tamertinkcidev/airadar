@@ -1,0 +1,114 @@
+{
+  "_doc": "BEISPIEL – Inhalte und Modellnamen frei erfunden, nur das Format zählt. Reiner Text, kein HTML/Markdown (wird escaped). Jede Quelle als vollständige URL.",
+  "issue": {
+    "date": "2026-09-27",
+    "kw": 39,
+    "hook": "Alpha 3 übernimmt die Agent-Spitze, Epsilon Open wird zum Preisbrecher",
+    "late": false,
+    "baseline": false
+  },
+  "tldr": [
+    "Modell Alpha 3 führt τ²-bench mit 84,2 % und ist damit erste Wahl für mehrstufige Tool-Agenten – zum doppelten Preis von Beta Pro.",
+    "Modell Epsilon Open (Open Weights) liefert 72,9 % BFCL für 1,10 $ je 1M Output-Tokens und ist über EU-Provider auf OpenRouter verfügbar.",
+    "n8n 1.110 bringt Structured-Output-Parser-Fixes; der Anthropic-Node unterstützt jetzt Prompt-Caching."
+  ],
+  "new_models": [
+    {
+      "name": "Modell Alpha 3",
+      "vendor": "Alpha Labs",
+      "released": "2026-09-24",
+      "context": "1M Tokens",
+      "price": "5 $ / 25 $",
+      "tools": "ja, parallel + Structured Output",
+      "n8n": "nativer Node (Alpha Chat Model)",
+      "eu": "über Cloud-Provider EU-Region",
+      "note": "Stärkstes Modell für lange Agent-Läufe mit vielen Tools; für einfache Klassifikation überdimensioniert.",
+      "source": "https://example.com/alpha-3-announcement"
+    },
+    {
+      "name": "Modell Epsilon Open 2",
+      "vendor": "Epsilon AI",
+      "released": "2026-09-22",
+      "context": "256k Tokens",
+      "price": "0,30 $ / 1,10 $",
+      "tools": "ja",
+      "n8n": "OpenRouter Chat Model",
+      "eu": "Open Weights, EU-Provider auf OpenRouter",
+      "note": "Bestes Preis-Leistungs-Verhältnis für Extraktion und Routing; Tool-Calling solide, Long-Context-Abfall ab 128k.",
+      "source": "https://example.com/epsilon-open-2"
+    }
+  ],
+  "benchmarks": [
+    {
+      "chart": "tau2_bench.png",
+      "title": "τ²-bench: Alpha 3 setzt sich ab",
+      "insight": "Der Abstand von 4,7 Punkten zu Beta Pro entsteht fast vollständig in der Telecom-Domäne, wo Policy-Treue über viele Turns zählt. Für kurze Tool-Ketten (2–3 Calls) ist der Unterschied praktisch irrelevant.",
+      "source_label": "τ²-bench Leaderboard",
+      "source": "https://github.com/sierra-research/tau2-bench"
+    },
+    {
+      "chart": "bfcl.png",
+      "title": "BFCL: Tool-Calls sind kein Alleinstellungsmerkmal mehr",
+      "insight": "Fünf Modelle liegen innerhalb von 8 Punkten. Entscheidend wird Preis und Latenz, nicht mehr die reine Call-Genauigkeit.",
+      "source_label": "Berkeley Function Calling Leaderboard",
+      "source": "https://gorilla.cs.berkeley.edu/leaderboard.html"
+    },
+    {
+      "chart": "cost_vs_index.png",
+      "title": "Kosten vs. Leistung: die Effizienzgrenze verschiebt sich",
+      "insight": "Epsilon Open liefert 77 % der Alpha-3-Leistung für 4 % des Preises. Für Workflows mit über 10.000 Aufrufen im Monat ist das der Standard-Kandidat.",
+      "source_label": "Artificial Analysis",
+      "source": "https://artificialanalysis.ai/leaderboards/models"
+    },
+    {
+      "chart": "delta_week.png",
+      "title": "Was sich seit letzter Woche bewegt hat",
+      "insight": "Nur drei Modelle haben neue τ²-bench-Werte. Zeta Mini verliert nach Korrektur des Leaderboards 1,4 Punkte.",
+      "source_label": "τ²-bench Leaderboard",
+      "source": "https://github.com/sierra-research/tau2-bench"
+    }
+  ],
+  "changes": [
+    {
+      "title": "Beta Pro: Preissenkung um 30 % für Input-Tokens",
+      "text": "Gilt ab 1. Oktober, Output bleibt gleich. Bei Extraktions-Workflows mit langen Dokumenten sinken die Kosten spürbar.",
+      "source": "https://example.com/beta-pricing"
+    },
+    {
+      "title": "Gamma 2 Legacy wird am 15. November abgeschaltet",
+      "text": "Betroffene n8n-Workflows auf Gamma 2.1 umstellen; Tool-Schema ist kompatibel.",
+      "source": "https://example.com/gamma-deprecation"
+    }
+  ],
+  "use_cases": [
+    {"use_case": "Klassifikation/Routing", "pick": "Modell Zeta Mini", "alt": "Epsilon Open 2", "why": "Kurze Prompts, hohe Stückzahl – Genauigkeit reicht, Kosten dominieren."},
+    {"use_case": "Dokument-/E-Mail-Extraktion", "pick": "Modell Epsilon Open 2", "alt": "Beta Pro", "why": "Structured Output stabil, 256k Kontext, EU-Hosting über OpenRouter-Provider."},
+    {"use_case": "Tool-Calling-Agent in n8n", "pick": "Modell Alpha 3", "alt": "Beta Pro", "why": "τ²-bench-Spitze; lohnt sich ab 5+ Tools pro Lauf und bei Policy-Regeln."},
+    {"use_case": "Recherche/Web", "pick": "Modell Beta Pro + Such-Tool", "alt": "Perplexity-Node", "why": "BrowseComp-Werte nur vom Hersteller berichtet – mit Vorsicht lesen."},
+    {"use_case": "Coding", "pick": "Modell Alpha 3", "alt": "Gamma 2", "why": "SWE-bench Verified 78 %, Terminal-Bench führend."},
+    {"use_case": "Long Context", "pick": "Modell Alpha 3 (1M)", "alt": "Delta Large (512k)", "why": "Einziges Modell mit stabiler Abrufqualität über 500k Tokens laut Hersteller-Eval."},
+    {"use_case": "Günstig & schnell", "pick": "Modell Zeta Mini", "alt": "Epsilon Open 2", "why": "0,40 $ je 1M Output, 180 Tokens/s."}
+  ],
+  "tinkellect": {
+    "intro": "Konkret für die laufenden Makler-Workflows:",
+    "items": [
+      {"title": "Exposé-Extraktion", "text": "Auf Epsilon Open 2 über OpenRouter mit EU-Provider umstellen – gleiche Qualität, rund 90 % günstiger als Beta Pro; Structured-Output-Schema bleibt."},
+      {"title": "Anfragen-Routing", "text": "Zeta Mini reicht; A/B gegen den aktuellen Node mit 200 echten Anfragen fahren, bevor umgestellt wird."},
+      {"title": "Gamma-2-Abschaltung", "text": "Zwei Workflows betroffen; bis 1. November auf Gamma 2.1 migrieren und Tool-Schemas einmal durchtesten."}
+    ]
+  },
+  "n8n_updates": [
+    {"title": "n8n 1.110: Structured Output Parser", "text": "Fehlerhafte JSON-Ausgaben werden jetzt mit automatischem Retry repariert; Auto-Fix-Option im Node.", "source": "https://docs.n8n.io/release-notes/"},
+    {"title": "Anthropic Chat Model: Prompt Caching", "text": "Systemprompts über 1.024 Tokens werden gecacht – spürbar günstiger bei langen Instruktionen.", "source": "https://docs.n8n.io/release-notes/"}
+  ],
+  "sources": [
+    {"title": "τ²-bench Leaderboard", "url": "https://github.com/sierra-research/tau2-bench"},
+    {"title": "Berkeley Function Calling Leaderboard", "url": "https://gorilla.cs.berkeley.edu/leaderboard.html"},
+    {"title": "Artificial Analysis – Models", "url": "https://artificialanalysis.ai/leaderboards/models"},
+    {"title": "SWE-bench", "url": "https://www.swebench.com/"},
+    {"title": "Terminal-Bench", "url": "https://www.tbench.ai/"},
+    {"title": "n8n Release Notes", "url": "https://docs.n8n.io/release-notes/"},
+    {"title": "Alpha 3 Announcement (Beispiel)", "url": "https://example.com/alpha-3-announcement"}
+  ],
+  "closing": "Nächste Ausgabe am Sonntag. Rückfragen oder Wunschthemen einfach auf diese Mail antworten."
+}
