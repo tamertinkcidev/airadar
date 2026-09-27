@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-27",
+  "subject": "Tinkellect AI Radar – KW39: Ruhige Woche: Roster und Kern-Benchmarks unverändert, n8n zieht nach",
+  "html_file": "out/2026-09-27/newsletter.html",
+  "text_file": "out/2026-09-27/newsletter.txt",
+  "html_bytes": 23478,
+  "approx_tokens": 6522,
+  "image_urls": [
+    "https://raw.githubusercontent.com/tamertinkcidev/airadar/main/charts/2026-09-27/tau2_bench.png",
+    "https://raw.githubusercontent.com/tamertinkcidev/airadar/main/charts/2026-09-27/cost_vs_score.png",
+    "https://raw.githubusercontent.com/tamertinkcidev/airadar/main/charts/2026-09-27/swe_bench_verified.png"
+  ],
+  "chart_files": [
+    "/home/user/airadar/charts/2026-09-27/tau2_bench.png",
+    "/home/user/airadar/charts/2026-09-27/cost_vs_score.png",
+    "/home/user/airadar/charts/2026-09-27/swe_bench_verified.png"
+  ],
+  "warnings": [
+    "new_models ist leer – ok, wenn es diese Woche wirklich nichts gab"
+  ],
+  "errors": []
+}

@@ -1,0 +1,77 @@
+{
+  "issue": {
+    "date": "2026-09-27",
+    "kw": 39,
+    "hook": "Ruhige Woche: Roster und Kern-Benchmarks unverändert, n8n zieht nach",
+    "late": false,
+    "baseline": false
+  },
+  "tldr": [
+    "Vier Tage nach dem Baseline-Lauf gibt es keine neuen, unabhängig bestätigten Modelle oder Benchmark-Werte: Qwen3.8-Max führt weiter mit 55,2 % im τ²-bench (Domain banking_knowledge, Stand 04.08.2026), Claude 4.5 Opus bleibt bei 76,8 % Spitzenreiter in SWE-bench Verified (Stand 26.02.2026).",
+    "n8n 2.41.0 (22.09.2026) macht die Modellliste im MiniMax-Node dynamisch aus der API und filtert die Gemini- und Qwen-Dropdowns auf reine Chat-Modelle.",
+    "Perplexitys alte Sonar-Chat-Completions-API läuft laut Ankündigung heute (27.09.2026) aus und wird durch die im August gestartete Agent API ersetzt – eine unabhängige Bestätigung des tatsächlichen Cutover war aus unserer Umgebung diese Woche nicht möglich."
+  ],
+  "new_models": [],
+  "benchmarks": [
+    {
+      "chart": "tau2_bench.png",
+      "title": "τ²-bench Banking: Qwen3.8-Max bleibt vorn",
+      "insight": "Auf dem Sierra-Leaderboard gibt es seit dem 04.08.2026 keine neuen gemergten Einträge: Qwen3.8-Max führt unverändert mit 55,2 % vor Claude Opus 5 (48,7 %). Für Claude Opus 5.5, GPT-6 Astra/Sol/Luna und Grok 4.7 fehlen weiterhin unabhängige Werte; eine Community-Einreichung (Publicis Sapient, 'SapientAI-Agent-Opus-5', 21.09.2026) wartet noch auf Merge und ist deshalb nicht im Chart.",
+      "source_label": "τ²-bench Leaderboard",
+      "source": "https://github.com/sierra-research/tau2-bench"
+    },
+    {
+      "chart": "cost_vs_score.png",
+      "title": "Kosten vs. Agent-Leistung: Qwen3.8-Max bleibt vorn",
+      "insight": "Bei unveränderten τ²-bench-Werten bleibt Qwen3.8-Max die beste Kombination aus Score und Preis (55,2 % für 6 $/1M Output). Kimi K3 als offenes Modell liegt bei 37,1 % für 15 $/1M – teurer bei schwächerem Ergebnis. Den Artificial-Analysis-Intelligence-Index konnten wir auch diese Woche nicht auswerten: artificialanalysis.ai war erneut aus unserer Umgebung nicht erreichbar.",
+      "source_label": "τ²-bench + Hersteller-Preisangaben",
+      "source": "https://github.com/sierra-research/tau2-bench"
+    },
+    {
+      "chart": "swe_bench_verified.png",
+      "title": "SWE-bench Verified: Claude 4.5 Opus weiter an der Spitze",
+      "insight": "Der Spitzenwert steht seit dem 26.02.2026 unverändert bei 76,8 % (Claude 4.5 Opus, high), mehrere Modelle liegen innerhalb von 6 Punkten dahinter. Aktuelle Flaggschiffe wie Opus 5.5 oder GPT-6 Astra tauchen auf der offiziellen Leaderboard-Seite noch nicht auf; swebench.com war diese Woche erneut blockiert, kursierende Drittanbieter-Werte (teils über 95 %) sind nicht primärquellen-geprüft und wurden nicht übernommen.",
+      "source_label": "SWE-bench Verified Leaderboard",
+      "source": "https://github.com/SWE-bench/swe-bench.github.io/blob/master/data/leaderboards.json"
+    }
+  ],
+  "changes": [
+    {
+      "title": "Perplexity: Sonar-Chat-Completions-API läuft heute aus",
+      "text": "Laut einer Ankündigung vom 13.08.2026 wird die alte Sonar-Chat-Completions-API am 27.09.2026 abgeschaltet und die bereits im August gestartete Agent API zur einzigen Schnittstelle. Preise sollen laut Ankündigung unverändert bleiben. Eine unabhängige Bestätigung, dass der Cutover heute tatsächlich stattgefunden hat, war aus unserer Umgebung nicht möglich (community.perplexity.ai blockiert) – vor einer Workflow-Umstellung den eigenen n8n-Perplexity-Node testen.",
+      "source": "https://community.perplexity.ai/t/sonar-is-moving-to-the-agent-api/5802"
+    }
+  ],
+  "use_cases": [
+    {"use_case": "Klassifikation/Routing", "pick": "GPT-6 Luna", "alt": "Gemini 3.5 Flash-Lite", "why": "0,10 $/0,50 $ je 1M Tokens – unverändert die günstigste Option im Roster für kurze Routing-Prompts in hoher Stückzahl."},
+    {"use_case": "Dokument-/E-Mail-Extraktion", "pick": "Gemini 3.8 Flash", "alt": "Mistral Small 4", "why": "Structured Output stabil, 1M Kontext, EU-Vertex-Regionen (Belgien/Niederlande) verfügbar – relevant für Exposé- und Kundendaten."},
+    {"use_case": "Tool-Calling-Agent in n8n", "pick": "Qwen3.8-Max", "alt": "Claude Opus 5", "why": "Weiterhin höchster τ²-bench-Wert im unabhängigen Leaderboard (55,2 %) bei einem Viertel des Opus-5-Preises."},
+    {"use_case": "Recherche/Web", "pick": "Perplexity Sonar Pro", "alt": "Sonar Reasoning Pro", "why": "Eingebaute Websuche statt eigenem Such-Tool; die Umstellung von Chat Completions auf die neue Agent API läuft laut Ankündigung heute, der n8n-Node soll sich automatisch anpassen."},
+    {"use_case": "Coding", "pick": "Grok 4.7", "alt": "DeepSeek V4-Pro (Open Weights)", "why": "Stärkste Coding-Benchmarks im Roster (CursorBench 4.0: 46,3 %); DeepSeek V4-Pro offen und laut Sekundärquelle mit 87,9 % in Terminal-Bench 2.1 dicht dahinter."},
+    {"use_case": "Long Context", "pick": "Llama 4.5 Scout", "alt": "Grok 4.3", "why": "10M Tokens Kontextfenster – größtes im Roster; Llama-4-Lizenz schließt EU-Firmen aber von multimodalen Fähigkeiten aus, Grok 4.3 (1M) als Alternative ohne diese Einschränkung."},
+    {"use_case": "Günstig & schnell", "pick": "GPT-6 Luna", "alt": "DeepSeek V4.1 Flash", "why": "0,10 $/0,50 $ je 1M Tokens; DeepSeek V4.1 Flash offen mit Peak/Off-Peak-Preisen (0,30 $/1,20 $ bzw. 0,15 $/0,60 $)."}
+  ],
+  "tinkellect": {
+    "intro": "Zwei Ansatzpunkte aus der Baseline bleiben unverändert relevant, dazu ein Hinweis zum n8n-Update dieser Woche:",
+    "items": [
+      {"title": "Exposé-Extraktion", "text": "Gemini 3.8 Flash über den nativen 'Google Gemini Chat Model'-Node mit Vertex-EU-Region (Belgien/Niederlande) für DSGVO-konforme Verarbeitung von Objektdaten; Structured Output für feste Exposé-Felder nutzen."},
+      {"title": "Anfragen-Routing", "text": "GPT-6 Luna über den nativen OpenAI-Node für die Erstklassifikation von Anfragen (Kauf/Miete/Besichtigung) – bei hohem Volumen kaum spürbare Kosten. Tool-Calling funktioniert nur, wenn der Node intern die Responses API nutzt."},
+      {"title": "n8n-2.41.0-Update prüfen", "text": "Wer den MiniMax- oder Gemini/Qwen-Node im Einsatz hat: Modell-Dropdowns sehen diese Woche ggf. anders aus (MiniMax lädt jetzt live aus der API, Gemini/Qwen zeigen nur noch Chat-Modelle) – kein Handlungsbedarf, aber vor dem nächsten Deploy einmal prüfen."}
+    ]
+  },
+  "n8n_updates": [
+    {"title": "n8n 2.41.0: MiniMax-Modelle jetzt dynamisch aus der API", "text": "Der MiniMax-Chat-Model-Node lädt die verfügbaren Modelle jetzt live von der API statt aus einer hartkodierten Liste – neue MiniMax-Modelle stehen automatisch zur Verfügung, ohne auf ein n8n-Update zu warten.", "source": "https://github.com/n8n-io/n8n/releases/tag/n8n%402.41.0"},
+    {"title": "n8n 2.41.0: Gemini- und Qwen-Dropdowns zeigen nur noch Chat-Modelle", "text": "Die Modellauswahl in den Google-Gemini- und Qwen-Cloud-Nodes filtert jetzt auf reine Chat-Modelle – Embedding- und andere Nicht-Chat-Modelle tauchen nicht mehr versehentlich in der Dropdown-Liste auf.", "source": "https://github.com/n8n-io/n8n/releases/tag/n8n%402.41.0"},
+    {"title": "n8n 2.41.0: OpenAI-Node akzeptiert Objekt-Werte für JSON-Parameter", "text": "Für JSON-typisierte Parameter im OpenAI-Node können jetzt direkt Objekte übergeben werden, statt sie vorher in einen String zu serialisieren – relevant für dynamisch gebaute Function-Call-Argumente.", "source": "https://github.com/n8n-io/n8n/releases/tag/n8n%402.41.0"}
+  ],
+  "sources": [
+    {"title": "τ²-bench Leaderboard (Sierra Research)", "url": "https://github.com/sierra-research/tau2-bench"},
+    {"title": "τ²-bench PR #550 (neue Einreichung, noch nicht gemerged)", "url": "https://github.com/sierra-research/tau2-bench/pull/550"},
+    {"title": "SWE-bench Verified – offizielle Leaderboard-Daten", "url": "https://github.com/SWE-bench/swe-bench.github.io/blob/master/data/leaderboards.json"},
+    {"title": "Berkeley Function Calling Leaderboard – Rohdaten (weiter deprecated)", "url": "https://raw.githubusercontent.com/ShishirPatil/gorilla/gh-pages/data_overall.csv"},
+    {"title": "n8n 2.41.0 Release Notes", "url": "https://github.com/n8n-io/n8n/releases/tag/n8n%402.41.0"},
+    {"title": "Perplexity: Sonar zieht auf die Agent API um", "url": "https://community.perplexity.ai/t/sonar-is-moving-to-the-agent-api/5802"},
+    {"title": "Artificial Analysis – Models (weiterhin blockiert)", "url": "https://artificialanalysis.ai/leaderboards/models"}
+  ],
+  "closing": "Diese Ausgabe liegt nur vier Tage nach der Baseline – entsprechend ruhig war die Newslage. Nächste Ausgabe voraussichtlich in der kommenden Woche. Rückfragen oder Wunschthemen einfach auf diese Mail antworten."
+}
