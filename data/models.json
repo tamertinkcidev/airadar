@@ -1,6 +1,6 @@
 {
   "_doc": "Modell-Roster. Wird vom Radar jede Woche gepflegt. Beim ersten Lauf (Baseline) werden die aktuellen Modelle aller Anbieter recherchiert und eingetragen. Nichts schätzen: Felder ohne Beleg bleiben null. 'verified' = im Lauf gegen eine Quelle geprüft.",
-  "updated": "2026-09-23",
+  "updated": "2026-09-27",
   "baseline_done": true,
   "vendors": {
     "anthropic": {
