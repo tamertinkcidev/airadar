@@ -1,0 +1,600 @@
+{
+  "_doc": "Benchmark-Registry. 'results' wird vom Radar gepflegt: je Modell-ID ein Objekt {value, date, source, self_reported, settings}. Kein Wert ohne Quelle. Beim ersten Lauf prüfen, ob jedes Leaderboard noch gepflegt wird; tote Benchmarks auf status='deprecated' setzen und im Newsletter Ersatz vorschlagen.",
+  "updated": "2026-09-23",
+  "benchmarks": {
+    "tau2_bench": {
+      "name": "τ²-bench",
+      "category": "core",
+      "status": "active",
+      "measures": "Agent löst Kundenservice-Aufgaben mit Tools und Policy-Regeln über mehrere Turns (Domänen: Retail, Airline, Telecom)",
+      "why_relevant": "Nächstes am n8n-Agent-Alltag: Tool-Calling + Regeltreue + Mehrschritt",
+      "metric": "pass^1 in %",
+      "higher_is_better": true,
+      "leaderboard": "https://github.com/sierra-research/tau2-bench",
+      "independent": true,
+      "results": {
+        "gemini-3-1-pro-preview": {
+          "value": 26.0,
+          "date": "2026-05-05",
+          "source": "https://github.com/sierra-research/tau2-bench/tree/main/web/leaderboard/public/submissions/gemini-3-1-pro-preview_sierra_2026-05-05",
+          "self_reported": false,
+          "settings": "banking_knowledge, v1.0.1, AllTools, User-Sim gpt-5.2, 4 Trials, reasoning high",
+          "name": "Gemini 3.1 Pro Preview"
+        },
+        "grok-4-5": {
+          "value": 47.9,
+          "date": "2026-08-04",
+          "source": "https://github.com/sierra-research/tau2-bench/tree/main/web/leaderboard/public/submissions/grok-4-5_sierra_2026-08-04",
+          "self_reported": false,
+          "settings": "banking_knowledge, v1.0.1, AllTools, User-Sim gpt-5.2, 4 Trials, reasoning high",
+          "name": "Grok 4.5"
+        },
+        "gpt-5-4": {
+          "value": 39.4,
+          "date": "2026-03-25",
+          "source": "https://github.com/sierra-research/tau2-bench/tree/main/web/leaderboard/public/submissions/gpt-5-4_sierra_2026-03-25",
+          "self_reported": false,
+          "settings": "banking_knowledge, v1.0.1, AllTools, User-Sim gpt-5.2, 4 Trials, reasoning xhigh",
+          "name": "GPT-5.4"
+        },
+        "claude-opus-4-5": {
+          "value": 24.7,
+          "date": "2026-02-26",
+          "source": "https://github.com/sierra-research/tau2-bench/tree/main/web/leaderboard/public/submissions/claude-opus-4-5_sierra_2026-02-26",
+          "self_reported": false,
+          "settings": "banking_knowledge, v1.0.1, AllTools, User-Sim gpt-5.2, 4 Trials, reasoning high",
+          "name": "Claude Opus 4.5"
+        },
+        "inkling": {
+          "value": 25.0,
+          "date": "2026-08-04",
+          "source": "https://github.com/sierra-research/tau2-bench/tree/main/web/leaderboard/public/submissions/inkling_sierra_2026-08-04",
+          "self_reported": false,
+          "settings": "banking_knowledge, v1.0.1, AllTools, User-Sim gpt-5.2, 4 Trials, reasoning max",
+          "name": "Inkling"
+        },
+        "grok-4-fast": {
+          "value": 15.7,
+          "date": "2026-05-05",
+          "source": "https://github.com/sierra-research/tau2-bench/tree/main/web/leaderboard/public/submissions/grok-4-fast_sierra_2026-05-05",
+          "self_reported": false,
+          "settings": "banking_knowledge, v1.0.1, AllTools, User-Sim gpt-5.2, 4 Trials, reasoning high",
+          "name": "Grok 4 fast"
+        },
+        "kimi-k3": {
+          "value": 37.1,
+          "date": "2026-08-04",
+          "source": "https://github.com/sierra-research/tau2-bench/tree/main/web/leaderboard/public/submissions/kimi-k3_sierra_2026-08-04",
+          "self_reported": false,
+          "settings": "banking_knowledge, v1.0.1, AllTools, User-Sim gpt-5.2, 4 Trials, reasoning max",
+          "name": "Kimi K3"
+        },
+        "grok-4-1-fast": {
+          "value": 13.1,
+          "date": "2026-05-05",
+          "source": "https://github.com/sierra-research/tau2-bench/tree/main/web/leaderboard/public/submissions/grok-4-1-fast_sierra_2026-05-05",
+          "self_reported": false,
+          "settings": "banking_knowledge, v1.0.1, AllTools, User-Sim gpt-5.2, 4 Trials, reasoning high",
+          "name": "Grok 4.1 fast"
+        },
+        "qwen-3-8-max": {
+          "value": 55.2,
+          "date": "2026-08-04",
+          "source": "https://github.com/sierra-research/tau2-bench/tree/main/web/leaderboard/public/submissions/qwen3-8-max_sierra_2026-08-04",
+          "self_reported": false,
+          "settings": "banking_knowledge, v1.0.1, AllTools, User-Sim gpt-5.2, 4 Trials, reasoning xhigh",
+          "name": "Qwen 3.8 Max"
+        },
+        "claude-opus-4-7": {
+          "value": 40.2,
+          "date": "2026-05-05",
+          "source": "https://github.com/sierra-research/tau2-bench/tree/main/web/leaderboard/public/submissions/claude-opus-4-7_sierra_2026-05-05",
+          "self_reported": false,
+          "settings": "banking_knowledge, v1.0.1, AllTools, User-Sim gpt-5.2, 4 Trials, reasoning max",
+          "name": "Claude Opus 4.7"
+        },
+        "gpt-5-2": {
+          "value": 32.2,
+          "date": "2026-02-26",
+          "source": "https://github.com/sierra-research/tau2-bench/tree/main/web/leaderboard/public/submissions/gpt-5-2_sierra_2026-02-26",
+          "self_reported": false,
+          "settings": "banking_knowledge, v1.0.1, AllTools, User-Sim gpt-5.2, 4 Trials, reasoning high",
+          "name": "GPT-5.2"
+        },
+        "muse-spark-1-1": {
+          "value": 40.5,
+          "date": "2026-08-04",
+          "source": "https://github.com/sierra-research/tau2-bench/tree/main/web/leaderboard/public/submissions/muse-spark-1-1_sierra_2026-08-04",
+          "self_reported": false,
+          "settings": "banking_knowledge, v1.0.1, AllTools, User-Sim gpt-5.2, 4 Trials, reasoning xhigh",
+          "name": "Muse Spark 1.1"
+        },
+        "glm-5-2": {
+          "value": 37.1,
+          "date": "2026-08-04",
+          "source": "https://github.com/sierra-research/tau2-bench/tree/main/web/leaderboard/public/submissions/glm-5-2_sierra_2026-08-04",
+          "self_reported": false,
+          "settings": "banking_knowledge, v1.0.1, AllTools, User-Sim gpt-5.2, 4 Trials, reasoning xhigh",
+          "name": "GLM-5.2"
+        },
+        "gpt-5-5": {
+          "value": 44.6,
+          "date": "2026-05-05",
+          "source": "https://github.com/sierra-research/tau2-bench/tree/main/web/leaderboard/public/submissions/gpt-5-5_sierra_2026-05-05",
+          "self_reported": false,
+          "settings": "banking_knowledge, v1.0.1, AllTools, User-Sim gpt-5.2, 4 Trials, reasoning xhigh",
+          "name": "GPT-5.5"
+        },
+        "claude-opus-4-6": {
+          "value": 27.3,
+          "date": "2026-05-05",
+          "source": "https://github.com/sierra-research/tau2-bench/tree/main/web/leaderboard/public/submissions/claude-opus-4-6_sierra_2026-05-05",
+          "self_reported": false,
+          "settings": "banking_knowledge, v1.0.1, AllTools, User-Sim gpt-5.2, 4 Trials, reasoning max",
+          "name": "Claude Opus 4.6"
+        },
+        "grok-4-2": {
+          "value": 18.0,
+          "date": "2026-05-05",
+          "source": "https://github.com/sierra-research/tau2-bench/tree/main/web/leaderboard/public/submissions/grok-4-2_sierra_2026-05-05",
+          "self_reported": false,
+          "settings": "banking_knowledge, v1.0.1, AllTools, User-Sim gpt-5.2, 4 Trials, reasoning high",
+          "name": "Grok 4.2"
+        },
+        "claude-opus-5": {
+          "value": 48.7,
+          "date": "2026-08-04",
+          "source": "https://github.com/sierra-research/tau2-bench/tree/main/web/leaderboard/public/submissions/claude-opus-5_sierra_2026-08-04",
+          "self_reported": false,
+          "settings": "banking_knowledge, v1.0.1, AllTools, User-Sim gpt-5.2, 4 Trials, reasoning max",
+          "name": "Claude Opus 5"
+        },
+        "gemini-2-5-pro": {
+          "value": 13.7,
+          "date": "2026-05-05",
+          "source": "https://github.com/sierra-research/tau2-bench/tree/main/web/leaderboard/public/submissions/gemini-2-5-pro_sierra_2026-05-05",
+          "self_reported": false,
+          "settings": "banking_knowledge, v1.0.1, AllTools, User-Sim gpt-5.2, 4 Trials, reasoning high",
+          "name": "Gemini 2.5 Pro"
+        },
+        "claude-opus-4-8": {
+          "value": 39.7,
+          "date": "2026-08-04",
+          "source": "https://github.com/sierra-research/tau2-bench/tree/main/web/leaderboard/public/submissions/claude-opus-4-8_sierra_2026-08-04",
+          "self_reported": false,
+          "settings": "banking_knowledge, v1.0.1, AllTools, User-Sim gpt-5.2, 4 Trials, reasoning max",
+          "name": "Claude Opus 4.8"
+        },
+        "claude-fable-5": {
+          "value": 39.7,
+          "date": "2026-08-04",
+          "source": "https://github.com/sierra-research/tau2-bench/tree/main/web/leaderboard/public/submissions/claude-fable-5_sierra_2026-08-04",
+          "self_reported": false,
+          "settings": "banking_knowledge, v1.0.1, AllTools, User-Sim gpt-5.2, 4 Trials, reasoning max",
+          "name": "Claude Fable 5"
+        },
+        "gpt-5-6-sol": {
+          "value": 46.9,
+          "date": "2026-08-04",
+          "source": "https://github.com/sierra-research/tau2-bench/tree/main/web/leaderboard/public/submissions/gpt-5-6-sol_sierra_2026-08-04",
+          "self_reported": false,
+          "settings": "banking_knowledge, v1.0.1, AllTools, User-Sim gpt-5.2, 4 Trials, reasoning xhigh",
+          "name": "GPT-5.6-sol"
+        }
+      },
+      "last_update": "2026-09-09",
+      "note": "Aktuelle Rangliste nur für Domäne banking_knowledge (v1.0.1); airline/retail/telecom ohne neue Läufe seit 2025. Offizielle Seite taubench.com war nicht erreichbar; Daten aus dem GitHub-Repo. Lauf 23.09.2026: manifest.json direkt per WebFetch geprüft – keine neuen Text-Agent-Einträge seit 04.08.2026, gpt-5-6-sol bleibt Spitzenwert. Sierra hat zusätzlich einen separaten Voice-Track eingeführt (u. a. qwen3-5-omni-plus-realtime, grok-voice-think-fast-2-0, gpt-live-1-diamond-alpha, ab 06.08.–09.09.2026) – andere Domäne/Kategorie, nicht mit banking_knowledge vergleichbar, daher nicht übernommen."
+    },
+    "bfcl": {
+      "name": "BFCL (Berkeley Function Calling Leaderboard)",
+      "category": "core",
+      "status": "deprecated",
+      "measures": "Korrektheit von Function-/Tool-Calls (einfach, parallel, multi-turn, Relevanzerkennung)",
+      "why_relevant": "Direktes Maß für zuverlässige Tool-Nodes in n8n",
+      "metric": "Overall Accuracy in %",
+      "higher_is_better": true,
+      "leaderboard": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "independent": true,
+      "results": {
+        "claude-opus-4-5-20251101-fc": {
+          "value": 77.47,
+          "date": "2026-04-12",
+          "source": "https://github.com/ShishirPatil/gorilla/blob/gh-pages/data_overall.csv",
+          "self_reported": false,
+          "settings": "BFCL V4 Overall; Datum = letztes Leaderboard-Update",
+          "name": "Claude-Opus-4-5-20251101 (FC)"
+        },
+        "claude-sonnet-4-5-20250929-fc": {
+          "value": 73.24,
+          "date": "2026-04-12",
+          "source": "https://github.com/ShishirPatil/gorilla/blob/gh-pages/data_overall.csv",
+          "self_reported": false,
+          "settings": "BFCL V4 Overall; Datum = letztes Leaderboard-Update",
+          "name": "Claude-Sonnet-4-5-20250929 (FC)"
+        },
+        "gemini-3-pro-preview-prompt": {
+          "value": 72.51,
+          "date": "2026-04-12",
+          "source": "https://github.com/ShishirPatil/gorilla/blob/gh-pages/data_overall.csv",
+          "self_reported": false,
+          "settings": "BFCL V4 Overall; Datum = letztes Leaderboard-Update",
+          "name": "Gemini-3-Pro-Preview (Prompt)"
+        },
+        "glm-4-6-fc-thinking": {
+          "value": 72.38,
+          "date": "2026-04-12",
+          "source": "https://github.com/ShishirPatil/gorilla/blob/gh-pages/data_overall.csv",
+          "self_reported": false,
+          "settings": "BFCL V4 Overall; Datum = letztes Leaderboard-Update",
+          "name": "GLM-4.6 (FC thinking)"
+        },
+        "grok-4-1-fast-reasoning-fc": {
+          "value": 69.57,
+          "date": "2026-04-12",
+          "source": "https://github.com/ShishirPatil/gorilla/blob/gh-pages/data_overall.csv",
+          "self_reported": false,
+          "settings": "BFCL V4 Overall; Datum = letztes Leaderboard-Update",
+          "name": "Grok-4-1-fast-reasoning (FC)"
+        },
+        "claude-haiku-4-5-20251001-fc": {
+          "value": 68.7,
+          "date": "2026-04-12",
+          "source": "https://github.com/ShishirPatil/gorilla/blob/gh-pages/data_overall.csv",
+          "self_reported": false,
+          "settings": "BFCL V4 Overall; Datum = letztes Leaderboard-Update",
+          "name": "Claude-Haiku-4-5-20251001 (FC)"
+        },
+        "gemini-3-pro-preview-fc": {
+          "value": 68.14,
+          "date": "2026-04-12",
+          "source": "https://github.com/ShishirPatil/gorilla/blob/gh-pages/data_overall.csv",
+          "self_reported": false,
+          "settings": "BFCL V4 Overall; Datum = letztes Leaderboard-Update",
+          "name": "Gemini-3-Pro-Preview (FC)"
+        },
+        "o3-2025-04-16-prompt": {
+          "value": 63.05,
+          "date": "2026-04-12",
+          "source": "https://github.com/ShishirPatil/gorilla/blob/gh-pages/data_overall.csv",
+          "self_reported": false,
+          "settings": "BFCL V4 Overall; Datum = letztes Leaderboard-Update",
+          "name": "o3-2025-04-16 (Prompt)"
+        },
+        "grok-4-0709-prompt": {
+          "value": 62.97,
+          "date": "2026-04-12",
+          "source": "https://github.com/ShishirPatil/gorilla/blob/gh-pages/data_overall.csv",
+          "self_reported": false,
+          "settings": "BFCL V4 Overall; Datum = letztes Leaderboard-Update",
+          "name": "Grok-4-0709 (Prompt)"
+        },
+        "grok-4-0709-fc": {
+          "value": 61.38,
+          "date": "2026-04-12",
+          "source": "https://github.com/ShishirPatil/gorilla/blob/gh-pages/data_overall.csv",
+          "self_reported": false,
+          "settings": "BFCL V4 Overall; Datum = letztes Leaderboard-Update",
+          "name": "Grok-4-0709 (FC)"
+        },
+        "moonshotai-kimi-k2-instruct-fc": {
+          "value": 59.06,
+          "date": "2026-04-12",
+          "source": "https://github.com/ShishirPatil/gorilla/blob/gh-pages/data_overall.csv",
+          "self_reported": false,
+          "settings": "BFCL V4 Overall; Datum = letztes Leaderboard-Update",
+          "name": "Moonshotai-Kimi-K2-Instruct (FC)"
+        },
+        "grok-4-1-fast-non-reasoning-fc": {
+          "value": 58.29,
+          "date": "2026-04-12",
+          "source": "https://github.com/ShishirPatil/gorilla/blob/gh-pages/data_overall.csv",
+          "self_reported": false,
+          "settings": "BFCL V4 Overall; Datum = letztes Leaderboard-Update",
+          "name": "Grok-4-1-fast-non-reasoning (FC)"
+        },
+        "command-a-reasoning-fc": {
+          "value": 57.06,
+          "date": "2026-04-12",
+          "source": "https://github.com/ShishirPatil/gorilla/blob/gh-pages/data_overall.csv",
+          "self_reported": false,
+          "settings": "BFCL V4 Overall; Datum = letztes Leaderboard-Update",
+          "name": "Command A Reasoning (FC)"
+        },
+        "deepseek-v3-2-exp-prompt-thinking": {
+          "value": 56.73,
+          "date": "2026-04-12",
+          "source": "https://github.com/ShishirPatil/gorilla/blob/gh-pages/data_overall.csv",
+          "self_reported": false,
+          "settings": "BFCL V4 Overall; Datum = letztes Leaderboard-Update",
+          "name": "DeepSeek-V3.2-Exp (Prompt + Thinking)"
+        },
+        "gemini-2-5-flash-fc": {
+          "value": 56.24,
+          "date": "2026-04-12",
+          "source": "https://github.com/ShishirPatil/gorilla/blob/gh-pages/data_overall.csv",
+          "self_reported": false,
+          "settings": "BFCL V4 Overall; Datum = letztes Leaderboard-Update",
+          "name": "Gemini-2.5-Flash (FC)"
+        },
+        "qwen3-235b-a22b-instruct-2507-prompt": {
+          "value": 52.15,
+          "date": "2026-04-12",
+          "source": "https://github.com/ShishirPatil/gorilla/blob/gh-pages/data_overall.csv",
+          "self_reported": false,
+          "settings": "BFCL V4 Overall; Datum = letztes Leaderboard-Update",
+          "name": "Qwen3-235B-A22B-Instruct-2507 (Prompt)"
+        },
+        "mistral-large-2411-fc": {
+          "value": 38.37,
+          "date": "2026-04-12",
+          "source": "https://github.com/ShishirPatil/gorilla/blob/gh-pages/data_overall.csv",
+          "self_reported": false,
+          "settings": "BFCL V4 Overall; Datum = letztes Leaderboard-Update",
+          "name": "mistral-large-2411 (FC)"
+        },
+        "llama-3-3-70b-instruct-fc": {
+          "value": 31.9,
+          "date": "2026-04-12",
+          "source": "https://github.com/ShishirPatil/gorilla/blob/gh-pages/data_overall.csv",
+          "self_reported": false,
+          "settings": "BFCL V4 Overall; Datum = letztes Leaderboard-Update",
+          "name": "Llama-3.3-70B-Instruct (FC)"
+        }
+      },
+      "last_update": "2026-04-12",
+      "note": "Letztes Update 2026-04-12 (>90 Tage), neueste Modelle Stand ~Nov 2025. Ersatzvorschlag: τ²-bench als Tool-Calling-Core, BFCL nur noch Kontext. Lauf 23.09.2026: offizielle Rohdaten-CSV (raw.githubusercontent.com/ShishirPatil/gorilla/gh-pages/data_overall.csv) direkt per WebFetch geprüft – jüngster Eintrag weiterhin 11.12.2025 ('GPT-5.2-2025-12-11 (FC)'), keine 2026er-Einträge. Ein Aggregator (llm-stats.com) behauptet ein Update auf 'Sept. 2026, Spitzenreiter Atria Dawn Preview 0,770' – das widerspricht der Primärquelle und wurde NICHT übernommen. Keine BFCL-V5-Ankündigung von Berkeley gefunden. Status deprecated bestätigt."
+    },
+    "swe_bench_verified": {
+      "name": "SWE-bench Verified",
+      "category": "core",
+      "status": "active",
+      "measures": "Reale GitHub-Issues lösen (500 geprüfte Aufgaben)",
+      "why_relevant": "Proxy für Code-/Skript-Generierung in Workflows und für agentische Ausdauer",
+      "metric": "% resolved",
+      "higher_is_better": true,
+      "leaderboard": "https://www.swebench.com/",
+      "independent": true,
+      "results": {
+        "claude-4-5-opus-high": {
+          "value": 76.8,
+          "date": "2026-02-17",
+          "source": "https://github.com/SWE-bench/swe-bench.github.io/blob/master/data/leaderboards.json",
+          "self_reported": false,
+          "settings": "bash-only, mini-SWE-agent 2.0.0, 1 Attempt",
+          "name": "Claude 4.5 Opus (high)"
+        },
+        "gemini-3-flash-high": {
+          "value": 75.8,
+          "date": "2026-02-17",
+          "source": "https://github.com/SWE-bench/swe-bench.github.io/blob/master/data/leaderboards.json",
+          "self_reported": false,
+          "settings": "bash-only, mini-SWE-agent 2.0.0, 1 Attempt",
+          "name": "Gemini 3 Flash (high)"
+        },
+        "minimax-m2-5-high": {
+          "value": 75.8,
+          "date": "2026-02-17",
+          "source": "https://github.com/SWE-bench/swe-bench.github.io/blob/master/data/leaderboards.json",
+          "self_reported": false,
+          "settings": "bash-only, mini-SWE-agent 2.0.0, 1 Attempt",
+          "name": "MiniMax M2.5 (high)"
+        },
+        "claude-4-6-opus": {
+          "value": 75.6,
+          "date": "2026-02-17",
+          "source": "https://github.com/SWE-bench/swe-bench.github.io/blob/master/data/leaderboards.json",
+          "self_reported": false,
+          "settings": "bash-only, mini-SWE-agent 2.0.0, 1 Attempt",
+          "name": "Claude 4.6 Opus"
+        },
+        "glm-5-high": {
+          "value": 72.8,
+          "date": "2026-02-17",
+          "source": "https://github.com/SWE-bench/swe-bench.github.io/blob/master/data/leaderboards.json",
+          "self_reported": false,
+          "settings": "bash-only, mini-SWE-agent 2.0.0, 1 Attempt",
+          "name": "GLM 5 (high)"
+        },
+        "gpt-5-2-high": {
+          "value": 72.8,
+          "date": "2026-02-17",
+          "source": "https://github.com/SWE-bench/swe-bench.github.io/blob/master/data/leaderboards.json",
+          "self_reported": false,
+          "settings": "bash-only, mini-SWE-agent 2.0.0, 1 Attempt",
+          "name": "GPT 5.2 (high)"
+        },
+        "gpt-5-2-codex": {
+          "value": 72.8,
+          "date": "2026-02-19",
+          "source": "https://github.com/SWE-bench/swe-bench.github.io/blob/master/data/leaderboards.json",
+          "self_reported": false,
+          "settings": "bash-only, mini-SWE-agent 2.0.0, 1 Attempt",
+          "name": "GPT 5.2 Codex"
+        },
+        "claude-4-5-sonnet-high": {
+          "value": 71.4,
+          "date": "2026-02-17",
+          "source": "https://github.com/SWE-bench/swe-bench.github.io/blob/master/data/leaderboards.json",
+          "self_reported": false,
+          "settings": "bash-only, mini-SWE-agent 2.0.0, 1 Attempt",
+          "name": "Claude 4.5 Sonnet (high)"
+        },
+        "kimi-k2-5-high": {
+          "value": 70.8,
+          "date": "2026-02-17",
+          "source": "https://github.com/SWE-bench/swe-bench.github.io/blob/master/data/leaderboards.json",
+          "self_reported": false,
+          "settings": "bash-only, mini-SWE-agent 2.0.0, 1 Attempt",
+          "name": "Kimi K2.5 (high)"
+        },
+        "deepseek-v3-2-high": {
+          "value": 70.0,
+          "date": "2026-02-17",
+          "source": "https://github.com/SWE-bench/swe-bench.github.io/blob/master/data/leaderboards.json",
+          "self_reported": false,
+          "settings": "bash-only, mini-SWE-agent 2.0.0, 1 Attempt",
+          "name": "DeepSeek V3.2 (high)"
+        },
+        "gemini-3-pro": {
+          "value": 69.6,
+          "date": "2026-02-26",
+          "source": "https://github.com/SWE-bench/swe-bench.github.io/blob/master/data/leaderboards.json",
+          "self_reported": false,
+          "settings": "bash-only, mini-SWE-agent 2.0.0, 1 Attempt",
+          "name": "Gemini 3 Pro"
+        },
+        "claude-4-5-haiku-high": {
+          "value": 66.6,
+          "date": "2026-02-17",
+          "source": "https://github.com/SWE-bench/swe-bench.github.io/blob/master/data/leaderboards.json",
+          "self_reported": false,
+          "settings": "bash-only, mini-SWE-agent 2.0.0, 1 Attempt",
+          "name": "Claude 4.5 Haiku (high)"
+        },
+        "gpt-5-mini": {
+          "value": 56.2,
+          "date": "2026-02-17",
+          "source": "https://github.com/SWE-bench/swe-bench.github.io/blob/master/data/leaderboards.json",
+          "self_reported": false,
+          "settings": "bash-only, mini-SWE-agent 2.0.0, 1 Attempt",
+          "name": "GPT 5 mini"
+        }
+      },
+      "last_update": "2026-02-26",
+      "note": "Korrektur 23.09.2026: Status-Downgrade auf 'deprecated' war voreilig – github.com/SWE-bench/experiments/pull/487 (18.09.2026, primärquellen-belegt) zeigt, dass das Verified-Leaderboard weiterhin aktiv neue Einreichungen annimmt (~134 Einreichungen Stand Juli 2026). Konkrete neue Spitzenwerte konnten aber nicht primärquellen-verifiziert werden: die JSON-Datei im offiziellen Repo lieferte beim Abruf nur den 'Multilingual'-Teil (jüngster Wert dort 13.02.2026), nicht die Verified-Sektion; swebench.com selbst war blockiert. Sekundärquellen behaupten Sättigung bei ~95-96% mit teils nicht verifizierbaren Modellnamen ('Claude Mythos 5') – NICHT übernommen. Ergänzung: SWE-bench Pro (Scale AI) existiert als aktiver Nachfolge-Benchmark für gesättigte Vergleiche – https://labs.scale.com/leaderboard/swe_bench_pro_public (Existenz bestätigt über github.com/scaleapi/SWE-bench_Pro-os, Werte selbst nicht primärquellen-geprüft)."
+    },
+    "terminal_bench": {
+      "name": "Terminal-Bench",
+      "category": "core",
+      "status": "active",
+      "measures": "Aufgaben in einer echten Shell-Umgebung Ende-zu-Ende lösen",
+      "why_relevant": "Agentische Ausführung mit Werkzeugen unter realen Fehlerbedingungen",
+      "metric": "Accuracy in %",
+      "higher_is_better": true,
+      "leaderboard": "https://www.tbench.ai/",
+      "independent": true,
+      "results": {
+        "gemini-3-8-flash": {
+          "value": 89.4,
+          "date": "2026-09-22",
+          "source": "https://llm-stats.com/benchmarks/terminal-bench-2.1",
+          "self_reported": false,
+          "settings": "Terminal-Bench 2.1; Wert laut Drittanbieter-Aggregator (llm-stats.com/snorkel.ai), primäre Quelle tbench.ai in dieser Umgebung gesperrt und daher NICHT direkt verifiziert – vor nächster Ausgabe mit zweitem Kanal gegenprüfen.",
+          "name": "Gemini 3.8 Flash"
+        },
+        "deepseek-v4-pro": {
+          "value": 87.9,
+          "date": "2026-09-22",
+          "source": "https://llm-stats.com/benchmarks/terminal-bench-2.1",
+          "self_reported": false,
+          "settings": "Terminal-Bench 2.1, Rang 6, bestes Open-Source-Modell; Wert laut Drittanbieter-Aggregator, primäre Quelle gesperrt, nicht direkt verifiziert.",
+          "name": "DeepSeek V4-Pro (0813)"
+        }
+      },
+      "note": "Baseline 2026-09-23: tbench.ai in der Umgebung weiterhin gesperrt (EGRESS_BLOCKED), keine direkte Primärverifikation möglich. Terminal-Bench 2.1 existiert und wird laut mehreren unabhängigen Drittanbieter-Aggregatoren (llm-stats.com, snorkel.ai, codingfleet.com, Stand Sept. 2026) aktiv gepflegt (35 bewertete Modelle, Ø 0,7). Werte oben mit expliziter Sekundärquellen-Kennzeichnung übernommen (Regel 2.2: Aggregator statt unabhängigem Leaderboard, da Primärquelle nicht erreichbar). DeepSeek-V4-Flash-0731 wird als günstigstes Top-10%-Modell genannt (0,827, 0,09$/1M Input) – nicht übernommen, da diese genaue Modellversion nicht in unserem Roster geführt wird."
+    },
+    "aa_intelligence_index": {
+      "name": "Artificial Analysis Intelligence Index",
+      "category": "core",
+      "status": "active",
+      "measures": "Aggregierter Index aus mehreren Evals; dazu Preis je 1M Tokens und Tokens/s",
+      "why_relevant": "Einzige Quelle, die Leistung, Preis und Geschwindigkeit vergleichbar nebeneinander stellt",
+      "metric": "Index (0–100)",
+      "higher_is_better": true,
+      "leaderboard": "https://artificialanalysis.ai/leaderboards/models",
+      "independent": true,
+      "results": {},
+      "note": "Baseline 2026-09-23: artificialanalysis.ai weiterhin gesperrt (EGRESS_BLOCKED). Verschiedene Suchanfragen zu einer Top-10-Rangliste widersprachen sich untereinander (unterschiedliche Skalen/Snapshots, teils nicht absteigend sortiert trotz Rang-Nummerierung) – keine belastbare Rangliste extrahierbar, daher weiterhin keine Werte übernommen (Regel 1: kein Schätzen). Zwei Einzeldatenpunkte wurden über mehrere Suchanfragen hinweg konsistent wiederholt (Claude Opus 5.5: Index 56–58, Preis 4$/20$ je 1M, ~92-93 Tok/s; GPT-5.6 Sol: Index 39–47 je nach Reasoning-Effort, Preis 4$/20$ je 1M, 60–84 Tok/s) – zu dünn für ein Chart, aber als Randnotiz für 'Was sich geändert hat' brauchbar. Möglicher Grund für die Widersprüche: AA hat die Intelligence-Index-Methodik laut einer Quelle am 19.09.2026 auf v4.3.2 revidiert (vollständige Neubewertung) – nicht zweitquellen-bestätigt."
+    },
+    "gaia": {
+      "name": "GAIA",
+      "category": "context",
+      "status": "active",
+      "measures": "Assistenten-Aufgaben mit Recherche, Tools und Mehrschritt-Reasoning",
+      "why_relevant": "Recherche-Agenten",
+      "metric": "Accuracy in %",
+      "higher_is_better": true,
+      "leaderboard": "https://huggingface.co/spaces/gaia-benchmark/leaderboard",
+      "independent": true,
+      "results": {},
+      "note": "Baseline 2026-09-23: huggingface.co weiterhin gesperrt. Aggregator-Snippets widersprechen sich stark und enthalten nicht verifizierbare Namen (u. a. 'Agents-A1-4B' mit 95,1% – unplausibel) – nicht übernommen. Princeton HAL (hal.cs.princeton.edu/gaia) könnte ein aktiveres Alternativ-Leaderboard mit eigenem Agent-Scaffolding sein (Claude Sonnet 4.5 74,55% laut Suchsnippet) – bei nächster Ausgabe mit direktem Fetch prüfen. Pflegestatus des originalen HF-Space weiterhin ungeprüft."
+    },
+    "browsecomp": {
+      "name": "BrowseComp",
+      "category": "context",
+      "status": "active",
+      "measures": "Schwer auffindbare Fakten im Web recherchieren",
+      "why_relevant": "Web-Recherche-Workflows (Lead-Research, Marktbeobachtung)",
+      "metric": "Accuracy in %",
+      "higher_is_better": true,
+      "leaderboard": "https://openai.com/index/browsecomp/",
+      "independent": false,
+      "results": {},
+      "note": "Baseline 2026-09-23: openai.com weiterhin gesperrt. Wichtiger Befund: es existiert kein offizielles, unabhängig geprüftes BrowseComp-Leaderboard – alle kursierenden Werte sind Selbstangaben, und Scores hängen stark von Tool-/Kontext-Strategie ab (Systemmessung statt reiner Modellmessung). Gefundene Aggregator-Zahlen ('Atria Dawn Preview' 92,5%, 'GPT-6 Astra' 91,5% u.a.) nicht primärquellen-verifizierbar und teils widersprüchlich – nicht übernommen. independent bleibt false."
+    },
+    "osworld": {
+      "name": "OSWorld(-Verified)",
+      "category": "context",
+      "status": "active",
+      "measures": "Computer-Use: reale Desktop-Aufgaben per GUI",
+      "why_relevant": "Relevant, sobald Kunden Legacy-Software ohne API automatisieren wollen",
+      "metric": "Success Rate in %",
+      "higher_is_better": true,
+      "leaderboard": "https://os-world.github.io/",
+      "independent": true,
+      "results": {},
+      "note": "Baseline 2026-09-23: os-world.github.io weiterhin gesperrt. Aggregator (Stand 22.09.2026, angeblich 24 gelistete Modelle) nennt Werte für 'Claude Fable 5' und 'Claude Mythos 5' (85%) – Modellversionen/Namen nicht sicher unseren Roster-IDs zuordenbar und nicht primärquellen-geprüft, daher nicht übernommen. Aktivitätsstatus laut Aggregator 'aktiv', aber nicht primärquellen-bestätigt."
+    },
+    "ifbench": {
+      "name": "IFBench",
+      "category": "context",
+      "status": "active",
+      "measures": "Präzises Befolgen von Output-Constraints (Format, Länge, Verbote)",
+      "why_relevant": "Structured Output und Format-Treue in Automationen",
+      "metric": "Accuracy in %",
+      "higher_is_better": true,
+      "leaderboard": "https://github.com/allenai/IFBench",
+      "independent": true,
+      "results": {},
+      "note": "Baseline 2026-09-23: Repo selbst per WebFetch erreichbar, enthält aber KEIN eigenes Leaderboard/Scoreboard – nur Eval-Code und Verifier-Funktionen, Ergebnisse müssen selbst gegen eigene Modelle gefahren werden. Artificial Analysis integriert IFBench offenbar als Teilkomponente ihres Intelligence Index (Blogpost-Titel gefunden) – lebt also als Bestandteil des AA-Index weiter, nicht als eigenständiges Leaderboard. Keine eigenständigen, primärquellen-geprüften Werte verfügbar."
+    },
+    "lmarena_text": {
+      "name": "LMArena (Text)",
+      "category": "context",
+      "status": "active",
+      "measures": "Menschliche Paarvergleiche, Elo-Score",
+      "why_relevant": "Wahrgenommene Qualität für kundennahe Texte (E-Mails, Antworten)",
+      "metric": "Elo",
+      "higher_is_better": true,
+      "leaderboard": "https://lmarena.ai/leaderboard",
+      "independent": true,
+      "results": {},
+      "note": "Baseline 2026-09-23: lmarena.ai weiterhin gesperrt. Aggregator-Snippets zu Top-Modellen widersprechen sich (unterschiedliche 'Spitzenmodelle' für denselben Zeitraum, u. a. nicht verifizierbares 'claude-opus-5-max') – keine belastbare Top-10-Liste extrahierbar. LMArena selbst dürfte als bekanntes Community-Voting-Leaderboard weiter aktiv sein, aber ohne direkten Fetch nicht mit konkreten Werten belegbar."
+    }
+  },
+  "aggregators": [
+    {
+      "name": "Artificial Analysis",
+      "url": "https://artificialanalysis.ai/"
+    },
+    {
+      "name": "Scale SEAL Leaderboards",
+      "url": "https://scale.com/leaderboard"
+    },
+    {
+      "name": "LiveBench",
+      "url": "https://livebench.ai/"
+    },
+    {
+      "name": "Vals AI",
+      "url": "https://www.vals.ai/benchmarks"
+    }
+  ],
+  "_result_schema": {
+    "value": "Zahl oder null",
+    "date": "YYYY-MM-DD (Datum der Quelle)",
+    "source": "URL",
+    "self_reported": "true, wenn vom Hersteller selbst gemessen",
+    "settings": "z. B. 'thinking high, 5 runs' – leer, wenn unbekannt"
+  }
+}
