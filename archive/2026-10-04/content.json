@@ -1,0 +1,170 @@
+{
+ "issue": {
+  "date": "2026-10-04",
+  "kw": 40,
+  "hook": "Gemini 4 Argon und GPT-6.1 Sol: beide 2 $ / 10 $",
+  "late": false,
+  "baseline": false
+ },
+ "tldr": [
+  "Zwei neue Flaggschiff-Modelle landen zum identischen Einführungspreis von 2 $ / 10 $ je 1M Tokens in/out: OpenAI GPT-6.1 Sol (29.09.2026, 1.050.000 Tokens Kontext) und Google Gemini 4 Argon (30.09.2026).",
+  "Unabhängige Agent-Werte fehlen für beide noch: Im τ²-bench führt weiter Qwen3.8-Max mit 55,2 % (Stand 04.08.2026), in SWE-bench Verified Claude 4.5 Opus mit 76,8 % (Stand 26.02.2026). Herstellerzahlen zu den Neuen nutzen teils andere Benchmark-Versionen und sind nicht vergleichbar.",
+  "n8n 2.42.0 (29.09.2026, Pre-Release) repariert den AI Agent Tool unter einem Parent-Agent; die Stable-Linie liegt bei 2.41.6."
+ ],
+ "new_models": [
+  {
+   "name": "GPT-6.1 Sol",
+   "vendor": "OpenAI",
+   "released": "2026-09-29",
+   "context": "1.050.000 Tokens",
+   "price": "2 $ / 10 $ (über 272K Input: 4 $ / 15 $)",
+   "tools": "nicht verifiziert",
+   "n8n": "nativer Node (OpenAI Chat Model); Modell-ID im Dropdown nicht verifiziert",
+   "eu": "nicht verifiziert",
+   "note": "Coding-orientiertes Modell, das laut Sekundärquellen Astra-nahe Leistung bei einem Fünftel des Preises bietet. Wofür gut: Coding- und Computer-Use-Agenten mit großem Kontext. Wofür nicht: unabhängig belegte Tool-Calling-Werte fehlen noch, daher vor Produktiveinsatz selbst testen.",
+   "source": "https://openrouter.ai/openai/gpt-6.1-sol"
+  },
+  {
+   "name": "Gemini 4 Argon",
+   "vendor": "Google",
+   "released": "2026-09-30",
+   "context": "nicht verfügbar",
+   "price": "2 $ / 10 $ (Einführungspreis, danach 4 $ / 20 $)",
+   "tools": "nicht verifiziert",
+   "n8n": "nativer Node (Google Gemini Chat Model); Vertex AI – Modell-ID im Dropdown nicht verifiziert",
+   "eu": "nicht verifiziert",
+   "note": "Googles erstes neues Pro-Tier-Modell seit Gemini 3.1 Pro, laut Berichten für lange Software-, Finanz- und Legal-Aufgaben gebaut. Wofür gut: Kandidat für Agenten, sobald Zugang und unabhängige Werte da sind. Wofür nicht: Zugang scheint eingeschränkt zu sein (nicht bestätigt), Herstellerbenchmarks sind nicht mit unserer Registry vergleichbar.",
+   "source": "https://axios.com/2026/09/30/google-gemini-4"
+  }
+ ],
+ "benchmarks": [
+  {
+   "chart": "tau2_bench.png",
+   "title": "τ²-bench Banking: Qwen3.8-Max bleibt vorn",
+   "insight": "Auf dem Sierra-Leaderboard gibt es weiter keine neuen gemergten Einträge seit dem 04.08.2026: Qwen3.8-Max führt unverändert mit 55,2 % vor Claude Opus 5 (48,7 %). GPT-6.1 Sol und Gemini 4 Argon haben noch keine unabhängigen τ²-bench-Werte; die Community-Einreichung 'SapientAI-Agent-Opus-5' (PR #550) ist nicht im Chart.",
+   "source_label": "τ²-bench Leaderboard",
+   "source": "https://github.com/sierra-research/tau2-bench"
+  },
+  {
+   "chart": "cost_vs_score.png",
+   "title": "Kosten vs. Agent-Leistung: Qwen3.8-Max bleibt vorn",
+   "insight": "Bei unveränderten τ²-bench-Werten bleibt Qwen3.8-Max die beste Kombination aus Score und Preis (55,2 % für 6 $/1M Output). Die beiden Neuen kosten 10 $/1M Output, haben aber keinen belegten Score und fehlen deshalb. Den Artificial-Analysis-Index konnten wir erneut nicht auswerten (Quelle blockiert).",
+   "source_label": "τ²-bench + Hersteller-Preisangaben",
+   "source": "https://github.com/sierra-research/tau2-bench"
+  },
+  {
+   "chart": "swe_bench_verified.png",
+   "title": "SWE-bench Verified: Claude 4.5 Opus weiter an der Spitze",
+   "insight": "Der Spitzenwert steht seit dem 26.02.2026 unverändert bei 76,8 % (Claude 4.5 Opus, high), mehrere Modelle liegen innerhalb von 6 Punkten dahinter. Aktuelle Flaggschiffe wie Opus 5.5 oder GPT-6 Astra tauchen auf der offiziellen Leaderboard-Seite noch nicht auf; swebench.com war diese Woche erneut blockiert, kursierende Drittanbieter-Werte (teils über 95 %) sind nicht primärquellen-geprüft und wurden nicht übernommen.",
+   "source_label": "SWE-bench Verified Leaderboard",
+   "source": "https://github.com/SWE-bench/swe-bench.github.io/blob/master/data/leaderboards.json"
+  }
+ ],
+ "changes": [
+  {
+   "title": "Neue Benchmark-Versionen verhindern den Vergleich",
+   "text": "Aktuelle Herstellerzahlen zu Argon und Sol beziehen sich laut Sekundärquellen auf Terminal-Bench 4.0 und DeepSWE; unsere Registry führt Terminal-Bench 2.1 und SWE-bench Verified. Wir mischen die Versionen nicht (Regel 2.3) und übernehmen keine Werte, bis ein unabhängiges Leaderboard sie führt.",
+   "source": "https://benchlm.ai/models/gemini-4-argon"
+  },
+  {
+   "title": "Argon-Einführungspreis ist befristet",
+   "text": "Laut Suchergebnissen steigt der Preis nach der Einführungsphase von 2 $ / 10 $ auf 4 $ / 20 $ je 1M Tokens – Workflows nicht auf den Einführungspreis kalkulieren. Ein Enddatum konnten wir nicht verifizieren.",
+   "source": "https://axios.com/2026/09/30/google-gemini-4"
+  }
+ ],
+ "use_cases": [
+  {
+   "use_case": "Klassifikation/Routing",
+   "pick": "GPT-6 Luna",
+   "alt": "Gemini 3.5 Flash-Lite",
+   "why": "0,10 $/0,50 $ je 1M Tokens – unverändert die günstigste Option im Roster für kurze Routing-Prompts in hoher Stückzahl."
+  },
+  {
+   "use_case": "Dokument-/E-Mail-Extraktion",
+   "pick": "Gemini 3.8 Flash",
+   "alt": "Mistral Small 4",
+   "why": "Structured Output stabil, 1M Kontext, EU-Vertex-Regionen (Belgien/Niederlande) verfügbar – relevant für Exposé- und Kundendaten."
+  },
+  {
+   "use_case": "Tool-Calling-Agent in n8n",
+   "pick": "Qwen3.8-Max",
+   "alt": "Claude Opus 5",
+   "why": "Weiterhin höchster τ²-bench-Wert im unabhängigen Leaderboard (55,2 %) bei einem Viertel des Opus-5-Preises."
+  },
+  {
+   "use_case": "Recherche/Web",
+   "pick": "Perplexity Sonar Pro",
+   "alt": "Sonar Reasoning Pro",
+   "why": "Eingebaute Websuche statt eigenem Such-Tool; die für den 27.09.2026 angekündigte Umstellung von Chat Completions auf die Agent API konnten wir nicht bestätigen – den n8n-Perplexity-Node vor Einsatz testen."
+  },
+  {
+   "use_case": "Coding",
+   "pick": "Grok 4.7",
+   "alt": "DeepSeek V4-Pro (Open Weights)",
+   "why": "Stärkste Coding-Benchmarks im Roster (CursorBench 4.0: 46,3 %); DeepSeek V4-Pro offen und laut Sekundärquelle mit 87,9 % in Terminal-Bench 2.1 dicht dahinter."
+  },
+  {
+   "use_case": "Long Context",
+   "pick": "Llama 4.5 Scout",
+   "alt": "Grok 4.3",
+   "why": "10M Tokens Kontextfenster – größtes im Roster; Llama-4-Lizenz schließt EU-Firmen aber von multimodalen Fähigkeiten aus, Grok 4.3 (1M) als Alternative ohne diese Einschränkung."
+  },
+  {
+   "use_case": "Günstig & schnell",
+   "pick": "GPT-6 Luna",
+   "alt": "DeepSeek V4.1 Flash",
+   "why": "0,10 $/0,50 $ je 1M Tokens; DeepSeek V4.1 Flash offen mit Peak/Off-Peak-Preisen (0,30 $/1,20 $ bzw. 0,15 $/0,60 $)."
+  }
+ ],
+ "tinkellect": {
+  "intro": "Konsequenzen für Makler- und Mittelstands-Workflows diese Woche:",
+  "items": [
+   {
+    "title": "Neue Modelle erst testen, dann umstellen",
+    "text": "GPT-6.1 Sol und Gemini 4 Argon liegen im Preis bei 2 $ / 10 $, aber ohne unabhängige Tool-Calling-Werte. Teste sie in einem Staging-Workflow (OpenAI- bzw. Google-Gemini-Node) gegen Qwen3.8-Max, bevor ein Kunden-Agent wechselt."
+   },
+   {
+    "title": "EU-Option vor Modellwahl klären",
+    "text": "Für beide Neuen konnten wir keine EU-Region bestätigen. Für Exposé- und Kundendaten bleibt Gemini 3.8 Flash mit Vertex-EU-Region (Belgien/Niederlande) die abgesicherte Wahl."
+   }
+  ]
+ },
+ "n8n_updates": [
+  {
+   "title": "n8n 2.42.0 (Pre-Release): AI Agent Tool unter Parent-Agent",
+   "text": "Ein Fix erlaubt, dass ein AI Agent Tool unter einem Parent-Agent vor Version 3 eigene Tools nutzt – relevant für Multi-Agent-Aufbauten. Dazu Layout-Verbesserungen im Agent-Builder-Chat. Stable ist 2.41.6 (02.10.2026); keine Breaking Changes an Modell-Nodes dokumentiert.",
+   "source": "https://github.com/n8n-io/n8n/releases"
+  }
+ ],
+ "sources": [
+  {
+   "title": "τ²-bench Leaderboard (Sierra Research)",
+   "url": "https://github.com/sierra-research/tau2-bench"
+  },
+  {
+   "title": "SWE-bench Verified – offizielle Leaderboard-Daten",
+   "url": "https://github.com/SWE-bench/swe-bench.github.io/blob/master/data/leaderboards.json"
+  },
+  {
+   "title": "GPT-6.1 Sol auf OpenRouter (Sekundärquelle, nicht abgerufen)",
+   "url": "https://openrouter.ai/openai/gpt-6.1-sol"
+  },
+  {
+   "title": "Axios: Google unveils Gemini 4 (nicht abgerufen)",
+   "url": "https://axios.com/2026/09/30/google-gemini-4"
+  },
+  {
+   "title": "BenchLM: Gemini 4 Argon (nicht abgerufen)",
+   "url": "https://benchlm.ai/models/gemini-4-argon"
+  },
+  {
+   "title": "n8n Releases",
+   "url": "https://github.com/n8n-io/n8n/releases"
+  },
+  {
+   "title": "Artificial Analysis – Models (weiterhin blockiert)",
+   "url": "https://artificialanalysis.ai/leaderboards/models"
+  }
+ ],
+ "closing": "Beide Neuheiten stützen sich diese Woche nur auf Suchergebnisse, da die Primärseiten aus unserer Umgebung blockiert waren – entsprechend vorsichtig einordnen. Rückfragen einfach auf diese Mail antworten."
+}
