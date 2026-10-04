@@ -1,6 +1,6 @@
 {
   "_doc": "Benchmark-Registry. 'results' wird vom Radar gepflegt: je Modell-ID ein Objekt {value, date, source, self_reported, settings}. Kein Wert ohne Quelle. Beim ersten Lauf prüfen, ob jedes Leaderboard noch gepflegt wird; tote Benchmarks auf status='deprecated' setzen und im Newsletter Ersatz vorschlagen.",
-  "updated": "2026-10-04",
+  "updated": "2026-09-27",
   "benchmarks": {
     "tau2_bench": {
       "name": "τ²-bench",

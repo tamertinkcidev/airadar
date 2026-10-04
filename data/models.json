@@ -1,6 +1,6 @@
 {
   "_doc": "Modell-Roster. Wird vom Radar jede Woche gepflegt. Beim ersten Lauf (Baseline) werden die aktuellen Modelle aller Anbieter recherchiert und eingetragen. Nichts schätzen: Felder ohne Beleg bleiben null. 'verified' = im Lauf gegen eine Quelle geprüft.",
-  "updated": "2026-09-27",
+  "updated": "2026-10-04",
   "baseline_done": true,
   "vendors": {
     "anthropic": {
@@ -665,6 +665,44 @@
       "first_seen": "2026-09-23",
       "last_verified": "2026-09-23",
       "_note": "2,8T gesamt/104B aktiv. Cache-Hit-Input 0,30$. Bei Release Platz 3 im Artificial-Analysis-Leaderboard hinter Claude Fable 5 und GPT-5.6 Sol; führend bei einem Arena.ai-Frontend-Web-Dev-Benchmark. Bereits als unabhängiger τ²-bench-Eintrag in unserer Benchmark-Registrierung vorhanden."
+    },
+    {
+      "id": "gemini-4-argon",
+      "name": "Gemini 4 Argon",
+      "vendor": "google",
+      "released": "2026-09-30",
+      "context_tokens": null,
+      "price_in_per_m": 2,
+      "price_out_per_m": 10,
+      "tool_calling": null,
+      "structured_output": null,
+      "n8n_path": "nativer Node (Google Gemini Chat Model); Vertex AI – Modell-ID im n8n-Dropdown nicht verifiziert",
+      "eu_hosting": null,
+      "open_weights": false,
+      "status": "active",
+      "source": "https://axios.com/2026/09/30/google-gemini-4",
+      "first_seen": "2026-10-04",
+      "last_verified": "2026-10-04",
+      "_note": "Nur über Websuche-Snippets (axios.com, cnbc.com, benchlm.ai, datacamp.com, alle per Egress-Proxy blockiert, Seiten nicht abgerufen). Einführungspreis 2 $/10 $ laut Suchergebnissen, danach 4 $/20 $. Kontextfenster: Quellen widersprüchlich/nicht offiziell – null. Ein Artikel-Titel ('You can't use it') deutet auf eingeschränkten Zugang hin – nicht verifiziert. Benchmarks (z. B. Terminal-Bench 4.0) sind andere Version als unser Registry-Wert (2.1) – nicht übernommen."
+    },
+    {
+      "id": "gpt-6-1-sol",
+      "name": "GPT-6.1 Sol",
+      "vendor": "openai",
+      "released": "2026-09-29",
+      "context_tokens": 1050000,
+      "price_in_per_m": 2,
+      "price_out_per_m": 10,
+      "tool_calling": null,
+      "structured_output": null,
+      "n8n_path": "nativer Node (OpenAI Chat Model); Modell-ID im Dropdown nicht verifiziert",
+      "eu_hosting": null,
+      "open_weights": false,
+      "status": "active",
+      "source": "https://openrouter.ai/openai/gpt-6.1-sol",
+      "first_seen": "2026-10-04",
+      "last_verified": "2026-10-04",
+      "_note": "Nur über Websuche-Snippets (openrouter.ai, vals.ai, sitepoint.com u. a. blockiert, nicht abgerufen). 2 $/10 $ bis 272K Input, darüber 4 $/15 $; Kontext 1.050.000, Max-Output 128.000 laut Suchergebnis zur OpenAI-Doku. Als Coding-orientiertes Modell positioniert. Vals Index laut Snippet 61,15 % (Rang 8 von 43) – anderer Aggregator als AA, nicht in Registry."
     }
   ],
   "_model_schema": {
