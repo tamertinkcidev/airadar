@@ -1,0 +1,61 @@
+{
+  "charts": [
+    {
+      "type": "hbar",
+      "file": "tau2_bench.png",
+      "title": "τ²-bench Banking: Qwen3.8-Max bleibt vorn",
+      "subtitle": "Stand 04.08.2026 (Sierra-Leaderboard) · unabhängig · Domain banking_knowledge v1.0.1 · unverändert zur Vorwoche · höher = besser",
+      "unit": " %",
+      "xlim": [0, 65],
+      "highlight": ["Qwen3.8-Max", "Kimi K3"],
+      "data": [
+        ["Qwen3.8-Max", 55.2],
+        ["Claude Opus 5", 48.7],
+        ["Grok 4.5", 47.9],
+        ["GPT-5.6 Sol", 46.9],
+        ["GPT-5.5", 44.6],
+        ["Muse Spark 1.1", 40.5],
+        ["Claude Opus 4.7", 40.2],
+        ["Kimi K3", 37.1]
+      ],
+      "source": "τ²-bench Leaderboard (GitHub, Sierra Research)"
+    },
+    {
+      "type": "scatter",
+      "file": "cost_vs_score.png",
+      "title": "Kosten vs. Agent-Leistung: Qwen3.8-Max bleibt vorn",
+      "subtitle": "τ²-bench-Score (banking_knowledge) vs. Output-Preis, nur Roster-Modelle mit belegtem Preis · Artificial Analysis Index diese Woche erneut nicht auswertbar (Quelle blockiert)",
+      "x_label": "USD je 1 Mio. Output-Tokens (log)",
+      "y_label": "τ²-bench pass^1 in %",
+      "x_log": true,
+      "points": [
+        {"label": "Claude Opus 5", "x": 25, "y": 48.7},
+        {"label": "GPT-5.6 Sol", "x": 20, "y": 46.9},
+        {"label": "Kimi K3 (Open Weights)", "x": 15, "y": 37.1},
+        {"label": "Qwen3.8-Max", "x": 6, "y": 55.2, "highlight": true}
+      ],
+      "source": "τ²-bench Leaderboard (Score) + Hersteller-Preisangaben (Preis, siehe data/models.json)"
+    },
+    {
+      "type": "hbar",
+      "file": "swe_bench_verified.png",
+      "title": "SWE-bench Verified: Claude 4.5 Opus weiter an der Spitze",
+      "subtitle": "Stand 26.02.2026 (offizielle Leaderboard-Daten) · unabhängig · unverändert zur Vorwoche · höher = besser",
+      "unit": " %",
+      "xlim": [0, 100],
+      "highlight": ["Claude 4.5 Opus (high)", "DeepSeek V3.2 (high)"],
+      "data": [
+        ["Claude 4.5 Opus (high)", 76.8],
+        ["Gemini 3 Flash (high)", 75.8],
+        ["MiniMax M2.5 (high)", 75.8],
+        ["Claude 4.6 Opus", 75.6],
+        ["GLM 5 (high)", 72.8],
+        ["GPT 5.2 (high)", 72.8],
+        ["Claude 4.5 Sonnet (high)", 71.4],
+        ["Kimi K2.5 (high)", 70.8],
+        ["DeepSeek V3.2 (high)", 70.0]
+      ],
+      "source": "SWE-bench Verified Leaderboard (offizielle Daten)"
+    }
+  ]
+}

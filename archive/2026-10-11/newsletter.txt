@@ -1,0 +1,50 @@
+Tinkellect AI Radar – KW41: Mistral Large 4 im Preview: 1M Kontext zum halben Preis
+===================================================================================
+KW 41 · 11.10.2026
+
+TL;DR
+- Mistral Large 4 ist seit 06.10.2026 als Public Preview verfügbar: 1.048.576 Tokens Kontext und 0,68 $ / 2,09 $ je 1M Tokens in/out – ein 50-%-Launch-Rabatt, der laut Changelog nach etwa zwei Wochen endet (Listenpreis 1,36 $ / 4,18 $).
+- Die τ²-bench- und SWE-bench-Spitzen sind unverändert (Qwen3.8-Max 55,2 %, Claude 4.5 Opus 76,8 %); für Mistral Large 4 gibt es keinen vergleichbaren unabhängigen Wert in unserer Registry.
+- n8n 2.42.6 (09.10.2026) ist Stable; 2.43.2 (Pre-Release) repariert Kimi K3 und andere OpenAI-kompatible Provider im self-hosted Assistant.
+
+NEUE MODELLE & UPDATES
+- Mistral Large 4 (Preview) (Mistral): Wofür gut: EU-nahe Option für lange Dokumente und Agenten, sobald Weights und Tool-Calling-Werte vorliegen. Wofür nicht: Ein Review sieht es unter den Open-Weight-Modellen im Mittelfeld und bei Listenpreis etwa 4x teurer pro Task als DeepSeek V4.1 Flash (Einzelquelle). Herstellerangabe: Terminal-Bench 4 28,3 % (unabhängig 22,73 %), nicht mit unserer Registry vergleichbar. [https://dev.to/akaranjkar08/mistral-large-4-preview-pricing-benchmarks-open-weights-jb9]
+
+BENCHMARK-LAGE
+- τ²-bench Banking: Qwen3.8-Max bleibt vorn: Keine neuen gemergten Einträge im Sierra-Leaderboard seit dem 04.08.2026: Qwen3.8-Max führt unverändert mit 55,2 % vor Claude Opus 5 (48,7 %). Mistral Large 4 hat noch keinen unabhängigen τ²-bench-Wert. Chart: https://raw.githubusercontent.com/tamertinkcidev/airadar/main/charts/2026-10-11/tau2_bench.png Quelle: https://github.com/sierra-research/tau2-bench
+- Kosten vs. Agent-Leistung: Qwen3.8-Max bleibt vorn: Bei unveränderten τ²-bench-Werten bleibt Qwen3.8-Max die beste Kombination aus Score (55,2 %) und Preis (6 $/1M Output). Mistral Large 4 (2,09 $ Output im Rabatt) fehlt mangels belegtem Score. Den Artificial-Analysis-Index konnten wir erneut nicht abrufen (Quelle blockiert). Chart: https://raw.githubusercontent.com/tamertinkcidev/airadar/main/charts/2026-10-11/cost_vs_score.png Quelle: https://github.com/sierra-research/tau2-bench
+- SWE-bench Verified: Claude 4.5 Opus weiter an der Spitze: Der Spitzenwert steht seit dem 26.02.2026 unverändert bei 76,8 % (Claude 4.5 Opus, high), mehrere Modelle liegen innerhalb von 6 Punkten dahinter. Aktuelle Flaggschiffe wie Opus 5.5 oder GPT-6 Astra tauchen auf der offiziellen Leaderboard-Seite noch nicht auf; swebench.com war diese Woche erneut blockiert, kursierende Drittanbieter-Werte (teils über 95 %) sind nicht primärquellen-geprüft und wurden nicht übernommen. Chart: https://raw.githubusercontent.com/tamertinkcidev/airadar/main/charts/2026-10-11/swe_bench_verified.png Quelle: https://github.com/SWE-bench/swe-bench.github.io/blob/master/data/leaderboards.json
+
+WAS SICH GEÄNDERT HAT
+- Mistral-Launchpreis ist befristet: Die 0,68 $ / 2,09 $ für Large 4 gelten laut Changelog-Angabe in Sekundärquellen rund zwei Wochen (bis ca. 20.10.2026); danach 1,36 $ / 4,18 $. Kalkuliere Workflows nicht mit dem Rabattpreis. [https://mxchat.ai/mistral-large-4-pricing-preview-discount/]
+- Gemini-/GPT-Neuheiten der Vorwoche ohne neue Daten: Für GPT-6.1 Sol und Gemini 4 Argon fanden wir diese Woche keine neuen verifizierten Angaben; die Einträge aus KW40 bleiben unverändert. [https://github.com/n8n-io/n8n/releases]
+
+WELCHES MODELL WOFÜR
+- Klassifikation/Routing: GPT-6 Luna (Alternative: Gemini 3.5 Flash-Lite) – 0,10 $/0,50 $ je 1M Tokens – unverändert die günstigste Option im Roster für kurze Routing-Prompts in hoher Stückzahl.
+- Dokument-/E-Mail-Extraktion: Gemini 3.8 Flash (Alternative: Mistral Small 4) – Structured Output stabil, 1M Kontext, EU-Vertex-Regionen (Belgien/Niederlande) verfügbar – relevant für Exposé- und Kundendaten.
+- Tool-Calling-Agent in n8n: Qwen3.8-Max (Alternative: Claude Opus 5) – Weiterhin höchster τ²-bench-Wert im unabhängigen Leaderboard (55,2 %) bei einem Viertel des Opus-5-Preises.
+- Recherche/Web: Perplexity Sonar Pro (Alternative: Sonar Reasoning Pro) – Eingebaute Websuche statt eigenem Such-Tool; die für den 27.09.2026 angekündigte Umstellung von Chat Completions auf die Agent API konnten wir nicht bestätigen – den n8n-Perplexity-Node vor Einsatz testen.
+- Coding: Grok 4.7 (Alternative: DeepSeek V4-Pro (Open Weights)) – Stärkste Coding-Benchmarks im Roster (CursorBench 4.0: 46,3 %); DeepSeek V4-Pro offen und laut Sekundärquelle mit 87,9 % in Terminal-Bench 2.1 dicht dahinter.
+- Long Context: Llama 4.5 Scout (Alternative: Grok 4.3) – 10M Tokens Kontextfenster – größtes im Roster; Llama-4-Lizenz schließt EU-Firmen aber von multimodalen Fähigkeiten aus, Grok 4.3 (1M) als Alternative ohne diese Einschränkung.
+- Günstig & schnell: GPT-6 Luna (Alternative: DeepSeek V4.1 Flash) – 0,10 $/0,50 $ je 1M Tokens; DeepSeek V4.1 Flash offen mit Peak/Off-Peak-Preisen (0,30 $/1,20 $ bzw. 0,15 $/0,60 $).
+
+FÜR TINKELLECT-WORKFLOWS
+Konsequenzen für Makler- und Mittelstands-Workflows diese Woche:
+- Mistral Large 4 für EU-Kunden beobachten: Für Makler-Workflows mit Exposé- und Kundendaten ist ein EU-Anbieter mit 1M Kontext interessant. Warte auf die versprochenen Open Weights (Ende Oktober) und eigene Tool-Calling-Tests im Mistral-Cloud-Node, bevor ein Kunden-Agent wechselt.
+- Kein Modellwechsel auf Verdacht: Qwen3.8-Max bleibt im unabhängigen τ²-bench vorn, Gemini 3.8 Flash mit Vertex-EU-Region die abgesicherte Extraktions-Wahl. Neue Modelle zuerst in einem Staging-Workflow gegen diese Baselines testen.
+
+N8N-UPDATES
+- n8n 2.42.6 (Stable, 09.10.2026) / 2.43.3 (Pre-Release): Im Google-Gemini-Node erscheinen Nano Banana 2.1 und 2 Lite in der Bildmodell-Liste. Keine Breaking Changes an Chat-Model-Nodes dokumentiert. [https://github.com/n8n-io/n8n/releases]
+- n8n 2.43.2 (Pre-Release, 08.10.2026): OpenAI-kompatible Provider: Fix für Kimi K3 und andere OpenAI-kompatible Modell-Provider im self-hosted Assistant; zudem zeigt der Editor das Agent-Artefakt während des Builds an. [https://github.com/n8n-io/n8n/releases]
+
+QUELLEN
+1. τ²-bench Leaderboard (Sierra Research) – https://github.com/sierra-research/tau2-bench
+2. SWE-bench Verified – offizielle Leaderboard-Daten – https://github.com/SWE-bench/swe-bench.github.io/blob/master/data/leaderboards.json
+3. Mistral Large 4 Preview (DEV Community, Sekundärquelle) – https://dev.to/akaranjkar08/mistral-large-4-preview-pricing-benchmarks-open-weights-jb9
+4. Mistral Large 4 Pricing (mxchat.ai, Sekundärquelle) – https://mxchat.ai/mistral-large-4-pricing-preview-discount/
+5. Mistral Large 4 Preview: What's Confirmed (Sekundärquelle) – https://www.online-tech-tips.com/mistral-large-4-preview-open-weights-news/
+6. n8n Releases – https://github.com/n8n-io/n8n/releases
+7. Artificial Analysis – Models (weiterhin blockiert) – https://artificialanalysis.ai/leaderboards/models
+
+Tinkellect · KI-Automation mit n8n für den Mittelstand · tinkellect.de
+Interner Wochen-Radar. Alle Benchmark-Werte mit Quelle und Datum; Herstellerangaben sind markiert.
