@@ -1,6 +1,6 @@
 {
   "_doc": "Modell-Roster. Wird vom Radar jede Woche gepflegt. Beim ersten Lauf (Baseline) werden die aktuellen Modelle aller Anbieter recherchiert und eingetragen. Nichts schätzen: Felder ohne Beleg bleiben null. 'verified' = im Lauf gegen eine Quelle geprüft.",
-  "updated": "2026-10-04",
+  "updated": "2026-10-11",
   "baseline_done": true,
   "vendors": {
     "anthropic": {
@@ -703,6 +703,25 @@
       "first_seen": "2026-10-04",
       "last_verified": "2026-10-04",
       "_note": "Nur über Websuche-Snippets (openrouter.ai, vals.ai, sitepoint.com u. a. blockiert, nicht abgerufen). 2 $/10 $ bis 272K Input, darüber 4 $/15 $; Kontext 1.050.000, Max-Output 128.000 laut Suchergebnis zur OpenAI-Doku. Als Coding-orientiertes Modell positioniert. Vals Index laut Snippet 61,15 % (Rang 8 von 43) – anderer Aggregator als AA, nicht in Registry."
+    },
+    {
+      "id": "mistral-large-4-preview",
+      "name": "Mistral Large 4 (Preview)",
+      "vendor": "mistral",
+      "released": "2026-10-06",
+      "context_tokens": 1048576,
+      "price_in_per_m": 0.68,
+      "price_out_per_m": 2.09,
+      "tool_calling": null,
+      "structured_output": null,
+      "n8n_path": "nativer Node (Mistral Cloud Chat Model); Modell-ID im Dropdown nicht verifiziert",
+      "eu_hosting": "EU-nativ (Paris, La Plateforme) laut Anbieterposition; nicht gegen Primärquelle geprüft",
+      "open_weights": false,
+      "status": "active",
+      "source": "https://dev.to/akaranjkar08/mistral-large-4-preview-pricing-benchmarks-open-weights-jb9",
+      "first_seen": "2026-10-11",
+      "last_verified": "2026-10-11",
+      "_note": "Nur aus Websuche-Snippets (sifted.eu, artificialanalysis.ai u. a. blockiert). Preis ist 50-%-Launch-Rabatt (Listenpreis 1,36 $/4,18 $), laut Mistral-Changelog ca. 2 Wochen (bis ~20.10.). Open Weights bis Ende Oktober versprochen, Lizenz offen. ~1T Parameter, 49–52B aktiv (Quellen uneinig). Herstellerwert Terminal-Bench 4: 28,3 % vs. 22,73 % unabhängig – andere Version als Registry, nicht übernommen. AA-Index ca. 38 (Snippet, nicht verifiziert, nicht in Registry)."
     }
   ],
   "_model_schema": {
